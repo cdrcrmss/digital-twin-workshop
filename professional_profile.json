@@ -1,0 +1,165 @@
+{
+  "personal": {
+    "name": "Cedric Tan",
+    "title": "Senior Software Engineer | AI/ML Specialist",
+    "location": "Melbourne, Australia",
+    "summary": "Results-driven software engineer with 6+ years of experience in building scalable AI-powered applications and digital twin systems. Specialized in RAG architectures, vector databases, and cloud-native solutions.",
+    "elevator_pitch": "I build intelligent systems that bridge the gap between AI and real-world applications. With expertise in digital twins and RAG architectures, I help organizations leverage their data to create powerful, context-aware applications. My experience spans the full development lifecycle, from concept to production deployment.",
+    "contact": {
+      "email": "cedric.tan@example.com",
+      "linkedin": "https://linkedin.com/in/cedrictan",
+      "github": "https://github.com/cedrictan-dev",
+      "portfolio": "https://cedrictan.dev"
+    }
+  },
+  "salary_location": {
+    "current_salary": "$120,000 - $135,000 AUD",
+    "salary_expectations": "$140,000 - $160,000 AUD based on role and responsibilities",
+    "location_preferences": ["Melbourne", "Remote", "Hybrid"],
+    "relocation_willing": true,
+    "remote_experience": "4+ years in distributed teams across multiple timezones",
+    "travel_availability": "Available for domestic/international travel up to 20%",
+    "work_authorization": "Australian Citizen"
+  },
+  "experience": [
+    {
+      "company": "AI Innovations Pty Ltd",
+      "title": "Senior AI Engineer",
+      "duration": "Mar 2021 - Present (3.5 years)",
+      "company_context": "AI startup specializing in enterprise digital twin solutions, 150+ employees, Series B funded",
+      "team_structure": "Lead engineer of 8-person AI/ML team, 3 direct reports",
+      "achievements_star": [
+        {
+          "situation": "Client needed real-time digital twin for predictive maintenance with 99.9% uptime",
+          "task": "Design and implement scalable digital twin architecture",
+          "action": "Architected a distributed system using Python, FastAPI, and Upstash Vector, implementing RAG for real-time data processing",
+          "result": "Reduced system downtime by 65%, saving $2.3M annually in maintenance costs, and enabling predictive maintenance with 92% accuracy"
+        }
+      ],
+      "technical_skills_used": ["Python", "FastAPI", "Upstash Vector", "Docker", "Kubernetes", "AWS"],
+      "leadership_examples": ["Mentored 3 junior engineers to senior level", "Established CI/CD pipelines reducing deployment time by 70%"],
+      "budget_managed": "$1.2M annual engineering budget",
+      "team_size_managed": 8
+    },
+    {
+      "company": "TechSolutions Australia",
+      "title": "Software Engineer",
+      "duration": "Jun 2018 - Feb 2021 (2.8 years)",
+      "company_context": "Mid-sized tech consultancy serving enterprise clients, 300+ employees",
+      "team_structure": "Full-stack development team of 12",
+      "achievements_star": [
+        {
+          "situation": "Legacy system causing 4-second API response times during peak loads",
+          "task": "Optimize system performance and scalability",
+          "action": "Refactored monolithic architecture to microservices, implemented Redis caching, and optimized database queries",
+          "result": "Improved API response times by 85%, reduced infrastructure costs by 40%, and enabled horizontal scaling"
+        }
+      ],
+      "technical_skills_used": ["Python", "Django", "React", "PostgreSQL", "Redis", "AWS"],
+      "leadership_examples": ["Led migration from monolith to microservices", "Conducted technical interviews for 15+ candidates"],
+      "budget_managed": "$500K project budget",
+      "team_size_managed": 5
+    }
+  ],
+  "skills": {
+    "technical": {
+      "programming_languages": [
+        {"language": "Python", "years": 6, "proficiency": "Expert", "frameworks": ["FastAPI", "Django", "Flask", "PyTorch"]},
+        {"language": "JavaScript/TypeScript", "years": 5, "proficiency": "Advanced", "frameworks": ["React", "Node.js", "Next.js"]},
+        {"language": "SQL", "years": 6, "proficiency": "Expert", "frameworks": ["PostgreSQL", "MySQL"]}
+      ],
+      "databases": ["PostgreSQL (5 years)", "MongoDB (4 years)", "Redis (4 years)", "Upstash Vector (2 years)"],
+      "cloud_platforms": ["AWS (5 years)", "Docker (4 years)", "Kubernetes (3 years)", "Terraform (3 years)"],
+      "ai_ml": ["RAG systems", "Vector databases", "LLM integration", "Digital Twins", "Predictive Analytics"]
+    },
+    "soft_skills": ["Technical Leadership", "Mentoring", "Agile/Scrum", "Stakeholder Management", "Problem Solving"],
+    "certifications": [
+      "AWS Certified Solutions Architect - Professional (2023)",
+      "Google Cloud Professional Machine Learning Engineer (2022)",
+      "Certified Kubernetes Administrator (2021)"
+    ]
+  },
+  "education": {
+    "university": "University of Melbourne",
+    "degree": "Master of Computer Science (AI/ML Specialization)",
+    "graduation_year": 2018,
+    "gpa": "3.8/4.0 (High Distinction)",
+    "relevant_coursework": ["Machine Learning", "Deep Learning", "Distributed Systems", "Natural Language Processing"],
+    "thesis_project": "Enhancing RAG Systems with Dynamic Context Retrieval"
+  },
+  "projects_portfolio": [
+    {
+      "name": "Digital Twin Workshop Platform",
+      "description": "Interactive platform for creating and managing digital twins with RAG capabilities",
+      "technologies": ["Python", "FastAPI", "Upstash Vector", "Groq API", "Next.js", "Docker"],
+      "impact": "Enabled 100+ users to create and deploy digital twins with 95% accuracy in simulations",
+      "github_url": "https://github.com/cedrictan-dev/digital-twin-workshop",
+      "live_demo": "https://digitaltwin.cedrictan.dev"
+    },
+    {
+      "name": "Enterprise RAG System",
+      "description": "Large-scale RAG implementation for enterprise knowledge management",
+      "technologies": ["Python", "LangChain", "Pinecone", "OpenAI API", "FastAPI"],
+      "impact": "Reduced information retrieval time by 80% for 500+ enterprise users"
+    }
+  ],
+  "career_goals": {
+    "short_term": "Lead AI/ML initiatives in a forward-thinking tech company",
+    "long_term": "CTO/Head of AI at a company revolutionizing industries with AI",
+    "learning_focus": ["Advanced LLM architectures", "Scalable AI systems", "Technical leadership"],
+    "industries_interested": ["AI/ML", "Fintech", "Climate Tech", "Healthcare"]
+  },
+  "interview_prep": {
+    "common_questions": {
+      "behavioral": [
+        "Describe a complex technical challenge you faced and how you overcame it",
+        "How do you stay updated with the latest AI/ML advancements?",
+        "Tell me about a time you had to explain a complex technical concept to a non-technical stakeholder"
+      ],
+      "technical": [
+        "How would you design a scalable RAG system for real-time data?",
+        "Explain your approach to optimizing vector search performance",
+        "Describe your experience with MLOps and model deployment"
+      ],
+      "situational": [
+        "How would you handle a situation where your AI model is making incorrect predictions in production?",
+        "Describe your approach to technical debt in a fast-moving AI project",
+        "How do you ensure the ethical use of AI in your projects?"
+      ],
+      "company_research": {
+        "research_areas": ["Company's AI strategy", "Technical challenges", "Team structure", "Growth opportunities"],
+        "preparation_questions": [
+          "How does the company approach AI ethics and responsible AI?",
+          "What are the biggest technical challenges your team is currently facing?",
+          "How does the company support professional development and learning?"
+        ]
+      }
+    },
+    "weakness_mitigation": [
+      {
+        "weakness": "Limited experience with Rust",
+        "mitigation": "Currently learning Rust through online courses and small projects, with plans to contribute to open-source Rust projects"
+      }
+    ]
+  },
+  "professional_development": {
+    "recent_learning": [
+      "Advanced RAG techniques",
+      "Distributed systems design",
+      "AI safety and alignment"
+    ],
+    "conferences_attended": [
+      "AI Engineering Summit 2024",
+      "PyCon Australia 2023",
+      "AWS re:Invent 2023"
+    ],
+    "publications": [
+      "Building Scalable Digital Twins with Python and Upstash Vector (2024)",
+      "Optimizing RAG Systems for Enterprise Use (2023)"
+    ],
+    "open_source": [
+      "Contributor to FastAPI documentation",
+      "Maintainer of open-source RAG toolkit"
+    ]
+  }
+}

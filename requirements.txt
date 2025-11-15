@@ -1,0 +1,19 @@
+# Core dependencies
+fastapi>=0.68.0,<1.0.0
+uvicorn>=0.15.0,<1.0.0
+python-dotenv>=0.19.0,<2.0.0
+requests>=2.26.0,<3.0.0
+pydantic>=2.0.0,<3.0.0
+
+# Vector database
+upstash-vector>=0.1.0,<1.0.0
+
+# LLM and embeddings
+groq>=0.1.0,<1.0.0
+
+# Async support
+httpx>=0.24.0,<1.0.0
+
+# Development
+typing-extensions>=4.0.0,<5.0.0
+python-multipart>=0.0.5,<1.0.0

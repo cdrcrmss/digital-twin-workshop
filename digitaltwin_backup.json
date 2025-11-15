@@ -1,0 +1,244 @@
+{
+    "name": "Digital Twin - Professional AI Assistant",
+    "description": "Comprehensive professional profile with STAR-format achievements for interview preparation",
+    "version": "2.0.0",
+    "created_at": "2025-11-14T10:00:00+08:00",
+    "content_chunks": [{
+            "id": "personal_intro",
+            "title": "Professional Introduction",
+            "content": "I'm a Senior Full Stack Developer with 5+ years of experience building scalable web applications and AI-powered systems. I specialize in Python, FastAPI, React, and Next.js, with a strong focus on RAG systems, vector databases, and modern AI integrations. I'm passionate about creating elegant solutions to complex technical challenges and mentoring junior developers to reach their full potential.",
+            "type": "introduction",
+            "metadata": {
+                "category": "personal",
+                "tags": ["introduction", "elevator pitch", "summary"]
+            }
+        },
+        {
+            "id": "salary_location",
+            "title": "Salary Expectations and Location Preferences",
+            "content": "I'm currently earning between $90,000 and $105,000 AUD annually. For my next role, I'm seeking $110,000 to $130,000 AUD based on the role's complexity and growth opportunities. I'm based in Melbourne and prefer hybrid or remote work arrangements. I'm open to occasional interstate travel (up to 20%) and have full Australian work authorization.",
+            "type": "compensation",
+            "metadata": {
+                "current_salary": "$90,000 - $105,000 AUD",
+                "expected_salary": "$110,000 - $130,000 AUD",
+                "location": "Melbourne, Australia",
+                "work_preference": "Hybrid/Remote",
+                "category": "compensation_location"
+            }
+        },
+        {
+            "id": "exp1_star",
+            "title": "STAR Achievement - Microservices Migration at TechCorp",
+            "content": "Situation: At TechCorp, our legacy monolithic application was causing 3-4 second page load times and frequent downtime during peak traffic, resulting in customer complaints and lost revenue. Task: As Senior Developer, I was tasked with leading the architectural redesign to improve performance and scalability while maintaining zero downtime during migration. Action: I designed and implemented a microservices architecture using Python FastAPI, Docker, and Kubernetes. I set up CI/CD pipelines with GitHub Actions, implemented Redis caching, and migrated the database to PostgreSQL with read replicas. I led a team of 5 developers through the 6-month migration, conducting daily standups and code reviews. Result: We reduced average page load times by 65% (from 3.5s to 1.2s), eliminated 90% of downtime incidents, and improved our system's ability to handle 3x more concurrent users. This resulted in a 25% increase in customer satisfaction scores and saved the company approximately $75,000 annually in infrastructure costs.",
+            "type": "experience",
+            "metadata": {
+                "company": "TechCorp",
+                "position": "Senior Developer",
+                "duration": "2020 - Present",
+                "achievement_type": "STAR",
+                "technologies": ["Python", "FastAPI", "Docker", "Kubernetes", "PostgreSQL", "Redis", "GitHub Actions"],
+                "impact": "65% performance improvement, $75K cost savings, 25% customer satisfaction increase",
+                "category": "work_experience"
+            }
+        },
+        {
+            "id": "exp2_star",
+            "title": "STAR Achievement - Real-time Analytics Dashboard",
+            "content": "Situation: Our product team was making decisions based on day-old data, missing critical user behavior patterns and trends. Task: I was asked to build a real-time analytics dashboard that could process and visualize data from 50,000+ daily active users with sub-second latency. Action: I architected a solution using React and Next.js for the frontend, with a FastAPI backend connected to a streaming data pipeline. I integrated WebSocket connections for live updates, implemented data aggregation with Redis Streams, and created custom visualization components. I worked closely with the data science team to ensure metrics accuracy and with UX designers for optimal user experience. Result: The dashboard now processes 2 million events per day with average 400ms latency. Product managers can now make data-driven decisions in real-time, which has led to a 40% faster feature iteration cycle and a 15% improvement in user retention through better-timed interventions.",
+            "type": "experience",
+            "metadata": {
+                "company": "TechCorp",
+                "position": "Senior Developer",
+                "duration": "2022",
+                "achievement_type": "STAR",
+                "technologies": ["React", "Next.js", "FastAPI", "WebSocket", "Redis Streams"],
+                "impact": "2M events/day, 400ms latency, 40% faster iterations, 15% retention improvement",
+                "category": "work_experience"
+            }
+        },
+        {
+            "id": "exp3_leadership",
+            "title": "STAR Achievement - Mentoring Junior Developers",
+            "content": "Situation: Our team had high turnover among junior developers who felt overwhelmed and unsupported in their first year. Task: I was asked to create and lead a structured mentorship program to improve junior developer retention and productivity. Action: I designed a 12-week onboarding program with weekly 1-on-1 sessions, paired programming exercises, and code review best practices. I created technical documentation, recorded training videos, and established a safe environment for asking questions. I personally mentored 8 junior developers over 2 years, tracking their progress and adjusting the program based on feedback. Result: Junior developer retention improved from 60% to 95% in their first year. Mentees reached full productivity 30% faster than before the program. Three of my mentees have been promoted to mid-level positions, and the program has been adopted company-wide across all engineering teams.",
+            "type": "leadership",
+            "metadata": {
+                "company": "TechCorp",
+                "achievement_type": "STAR",
+                "impact": "95% retention rate, 30% faster productivity, 3 promotions, company-wide adoption",
+                "category": "leadership_mentoring",
+                "tags": ["mentoring", "leadership", "team development"]
+            }
+        },
+        {
+            "id": "project1_digital_twin",
+            "title": "Project - Digital Twin RAG System with MCP Integration",
+            "content": "I recently built a production-ready Digital Twin AI assistant using RAG (Retrieval-Augmented Generation) technology for interview preparation. The system uses Upstash Vector for semantic search, Groq's LLaMA models for fast inference, and implements the Model Context Protocol (MCP) for integration with VS Code and Claude Desktop. Built with Next.js 16, TypeScript, and deployed on Vercel. The application features LLM-enhanced query preprocessing and response post-processing, delivering interview-ready answers with STAR-format storytelling. This project demonstrates my expertise in modern AI development, vector databases, and production deployment practices.",
+            "type": "project",
+            "metadata": {
+                "technologies": ["Next.js", "TypeScript", "Upstash Vector", "Groq API", "MCP Protocol", "Vercel", "Python"],
+                "category": "projects",
+                "year": 2025,
+                "github_url": "https://github.com/yourusername/digital-twin-mcp",
+                "tags": ["RAG", "AI", "MCP", "interview preparation", "vector database"]
+            }
+        },
+        {
+            "id": "project2_ecommerce",
+            "title": "Project - High-Performance E-commerce Platform",
+            "content": "Led the development of a full-stack e-commerce platform from conception to production. Built with React, Node.js, Express, and MongoDB, featuring advanced product search, real-time inventory management, secure payment processing with Stripe, and order tracking. Implemented comprehensive testing with Jest and Cypress, achieving 92% code coverage. The platform handles 10,000+ monthly active users, processes $500K+ in transactions annually, and maintains 99.9% uptime. Optimized database queries reduced checkout time by 45%, and implemented caching strategies that decreased server costs by 30%.",
+            "type": "project",
+            "metadata": {
+                "technologies": ["React", "Node.js", "Express", "MongoDB", "Stripe", "Jest", "Cypress"],
+                "category": "projects",
+                "year": 2022,
+                "impact": "10K+ users, $500K+ revenue, 99.9% uptime, 45% faster checkout",
+                "tags": ["e-commerce", "full-stack", "payment integration", "scalability"]
+            }
+        },
+        {
+            "id": "skills_backend",
+            "title": "Technical Skills - Backend Development (5+ years)",
+            "content": "Expert-level proficiency in Python with 5+ years of experience. I specialize in FastAPI (3 years), Django (4 years), and Flask (3 years) for building RESTful APIs and microservices. Strong database expertise with PostgreSQL (5 years) and MongoDB (3 years), including query optimization, indexing strategies, and database migration planning. I design and implement scalable microservices architectures, establish CI/CD pipelines, and follow Test-Driven Development (TDD) practices with 85%+ code coverage standards.",
+            "type": "skills",
+            "metadata": {
+                "category": "technical_skills",
+                "proficiency_level": "Expert",
+                "years_experience": 5,
+                "tags": ["Python", "FastAPI", "Django", "Flask", "PostgreSQL", "MongoDB", "Microservices", "TDD", "CI/CD"]
+            }
+        },
+        {
+            "id": "skills_frontend",
+            "title": "Technical Skills - Frontend Development (4+ years)",
+            "content": "Advanced proficiency in modern JavaScript/TypeScript with React (4 years) and Next.js (2 years). I build responsive, accessible user interfaces with a focus on performance optimization and user experience. Expert in state management (Redux, Zustand, React Context), component architecture, and CSS frameworks (Tailwind CSS, ShadCN UI). I implement comprehensive testing with Jest, React Testing Library, and end-to-end testing with Cypress or Playwright.",
+            "type": "skills",
+            "metadata": {
+                "category": "technical_skills",
+                "proficiency_level": "Advanced",
+                "years_experience": 4,
+                "tags": ["JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "Redux", "Testing"]
+            }
+        },
+        {
+            "id": "skills_ai_ml",
+            "title": "Technical Skills - AI/ML and RAG Systems (2+ years)",
+            "content": "Hands-on experience building production RAG (Retrieval-Augmented Generation) systems with vector databases (Upstash Vector, Pinecone, ChromaDB). I integrate LLM APIs (OpenAI, Anthropic Claude, Groq) into applications, implement semantic search with embeddings, and optimize prompt engineering for better AI responses. Familiar with Model Context Protocol (MCP) for AI agent integration, LangChain for orchestration, and deploying AI applications to production with proper error handling and cost optimization.",
+            "type": "skills",
+            "metadata": {
+                "category": "technical_skills",
+                "proficiency_level": "Intermediate",
+                "years_experience": 2,
+                "tags": ["RAG", "Vector Databases", "LLM Integration", "Semantic Search", "MCP Protocol", "LangChain", "AI Agents"]
+            }
+        },
+        {
+            "id": "skills_cloud",
+            "title": "Technical Skills - Cloud Infrastructure and DevOps (4+ years)",
+            "content": "AWS expertise with 4+ years of hands-on experience deploying and managing applications on EC2, RDS, S3, Lambda, and CloudFront. I design cloud architectures for scalability and cost optimization. Proficient with Docker (4 years) and Kubernetes (2 years) for containerization and orchestration. I set up CI/CD pipelines using GitHub Actions, implement infrastructure as code with Terraform, and monitor applications with CloudWatch and Datadog. AWS Certified Solutions Architect - Associate.",
+            "type": "skills",
+            "metadata": {
+                "category": "technical_skills",
+                "proficiency_level": "Advanced",
+                "years_experience": 4,
+                "tags": ["AWS", "Docker", "Kubernetes", "CI/CD", "GitHub Actions", "Terraform", "CloudWatch"],
+                "certifications": ["AWS Solutions Architect - Associate"]
+            }
+        },
+        {
+            "id": "soft_skills",
+            "title": "Soft Skills and Leadership",
+            "content": "Strong technical leadership with experience managing teams of up to 5 developers. I excel at cross-functional collaboration, working closely with product managers, designers, and stakeholders to deliver projects on time. Experienced in Agile/Scrum methodologies as both a team member and Scrum Master. I'm skilled at mentoring junior developers, conducting code reviews with constructive feedback, and fostering a culture of continuous learning. Strong communication skills for technical documentation, presenting to non-technical stakeholders, and leading architecture discussions.",
+            "type": "soft_skills",
+            "metadata": {
+                "category": "soft_skills",
+                "tags": ["leadership", "mentoring", "communication", "agile", "collaboration", "code reviews"]
+            }
+        },
+        {
+            "id": "education",
+            "title": "Education - Bachelor of Computer Science",
+            "content": "Bachelor of Science in Computer Science from State University (2016-2020). Graduated with High Honors (GPA: 3.8/4.0). Specialized in Artificial Intelligence and Machine Learning with relevant coursework in Data Structures, Algorithms, Database Systems, Software Engineering, and Neural Networks. Completed a capstone project on Predictive Analytics for E-commerce Recommendations, which later influenced my professional work in building recommendation systems.",
+            "type": "education",
+            "metadata": {
+                "institution": "State University",
+                "degree": "BSc Computer Science",
+                "graduation_year": 2020,
+                "gpa": "3.8/4.0",
+                "honors": "High Honors",
+                "specialization": "AI and Machine Learning",
+                "category": "education"
+            }
+        },
+        {
+            "id": "certifications",
+            "title": "Professional Certifications",
+            "content": "AWS Certified Solutions Architect - Associate (Valid until 2026). This certification demonstrates my expertise in designing distributed systems on AWS, including compute, networking, storage, and database services. I'm currently pursuing the AWS Professional-level certification and have completed courses in Advanced Kubernetes Administration and AI Engineering with Large Language Models.",
+            "type": "certification",
+            "metadata": {
+                "certifications": [
+                    { "name": "AWS Solutions Architect - Associate", "issuer": "Amazon Web Services", "year": 2023, "expiry": 2026 }
+                ],
+                "category": "certifications",
+                "in_progress": ["AWS Solutions Architect - Professional", "Certified Kubernetes Administrator (CKA)"]
+            }
+        },
+        {
+            "id": "career_goals",
+            "title": "Career Goals and Aspirations",
+            "content": "Short-term: I'm seeking a Senior or Lead Full Stack Developer role where I can leverage my AI/ML expertise to build innovative products while continuing to grow my technical leadership skills. I'm particularly interested in companies working on AI-powered applications, developer tools, or enterprise SaaS platforms. Long-term: My goal is to become a Head of Engineering or VP of Engineering, leading larger teams and driving technical strategy. I'm passionate about building engineering cultures that prioritize code quality, continuous learning, and work-life balance. I want to be at the forefront of AI integration in software development.",
+            "type": "career_goals",
+            "metadata": {
+                "short_term": "Senior/Lead Full Stack Developer with AI focus",
+                "long_term": "Head of Engineering / VP of Engineering",
+                "industries_of_interest": ["AI/ML", "Developer Tools", "Enterprise SaaS", "Fintech"],
+                "category": "career_development"
+            }
+        },
+        {
+            "id": "interview_questions_technical",
+            "title": "Common Interview Questions - Technical",
+            "content": "When asked about system design, I approach it systematically: gathering requirements, defining constraints, designing the high-level architecture, choosing appropriate databases and caching layers, planning for scalability and failure scenarios, and considering monitoring and deployment strategies. For the 'challenging bug' question, I discuss the microservices race condition I debugged at TechCorp that was causing intermittent payment failures - I used distributed tracing, reproduced it locally, and implemented idempotent API calls with unique request IDs to solve it. When discussing technology choices, I emphasize evaluating based on team expertise, project requirements, community support, performance characteristics, and long-term maintainability.",
+            "type": "interview_prep",
+            "metadata": {
+                "category": "interview_preparation",
+                "question_type": "technical",
+                "tags": ["system design", "debugging", "technology evaluation"]
+            }
+        },
+        {
+            "id": "interview_questions_behavioral",
+            "title": "Common Interview Questions - Behavioral",
+            "content": "For 'Tell me about yourself', I give a concise 2-minute pitch: my background in Computer Science, 5+ years as a full-stack developer specializing in Python and React, recent focus on AI/RAG systems, passion for mentoring and team development, and why I'm excited about this opportunity. When asked about handling disagreements, I reference the microservices vs monolith debate at TechCorp where I facilitated a technical discussion with data-driven analysis, leading to a hybrid approach that satisfied both perspectives. For managing tight deadlines, I discuss the analytics dashboard project where I broke down work into MVP stages, communicated trade-offs clearly to stakeholders, and delivered incrementally to meet the launch date while maintaining code quality.",
+            "type": "interview_prep",
+            "metadata": {
+                "category": "interview_preparation",
+                "question_type": "behavioral",
+                "tags": ["tell me about yourself", "conflict resolution", "deadline management", "stakeholder communication"]
+            }
+        },
+        {
+            "id": "interview_strengths_weaknesses",
+            "title": "Interview Questions - Strengths and Weaknesses",
+            "content": "My key strengths are technical versatility (full-stack with AI expertise), proven leadership through mentoring and team growth, and strong communication skills that bridge technical and business perspectives. I'm particularly proud of my ability to architect scalable systems and my track record of measurable business impact. As for weaknesses, I sometimes over-engineer solutions when a simpler approach would suffice - I'm working on this by implementing the YAGNI (You Aren't Gonna Need It) principle and seeking peer feedback during design reviews. I'm also building stronger expertise in infrastructure as code and advanced Kubernetes patterns, currently pursuing relevant certifications to formalize this knowledge.",
+            "type": "interview_prep",
+            "metadata": {
+                "category": "interview_preparation",
+                "strengths": ["technical versatility", "leadership", "communication", "scalable architecture"],
+                "weaknesses": ["tendency to over-engineer", "growing Kubernetes expertise"],
+                "improvement_actions": ["YAGNI principle", "peer reviews", "certification pursuit"],
+                "tags": ["strengths", "weaknesses", "self-awareness"]
+            }
+        },
+        {
+            "id": "why_hire_me",
+            "title": "Why You Should Hire Me",
+            "content": "You should hire me because I bring a unique combination of deep technical expertise, proven leadership, and measurable business impact. I don't just write code - I build systems that solve real business problems, as evidenced by my 65% performance improvement and $75K cost savings at TechCorp. I'm at the forefront of AI/RAG technology, which is increasingly critical for modern applications. I invest in people through mentoring, which has led to 95% retention and faster team productivity. I communicate effectively with both technical and non-technical stakeholders, ensuring alignment and successful project delivery. Most importantly, I'm passionate about continuous learning and staying current with emerging technologies, making me a long-term asset who will grow with your organization.",
+            "type": "interview_prep",
+            "metadata": {
+                "category": "interview_preparation",
+                "key_differentiators": ["business impact", "AI expertise", "leadership", "communication", "continuous learning"],
+                "tags": ["value proposition", "competitive advantage"]
+            }
+        }
+    ]
+}

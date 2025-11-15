@@ -1,0 +1,191 @@
+{
+    "name": "Lord Cedric D. Ramos - Digital Twin",
+    "description": "AI-powered professional profile for interview preparation and portfolio chatbot",
+    "version": "1.0.0",
+    "created_at": "2025-11-14T14:00:00+08:00",
+    "content_chunks": [{
+            "id": "personal_intro",
+            "title": "Professional Introduction",
+            "content": "I'm Lord Cedric D. Ramos, a 20-year-old aspiring Full Stack Developer from Cauayan City, Philippines. I'm deeply passionate about web development and continuously exploring the world of modern JavaScript frameworks, frontend design, and backend technologies. I enjoy creating user-friendly and visually appealing web applications while learning new tools and best practices that enhance both performance and user experience. My goal is to grow as a developer who builds meaningful and impactful digital solutions.",
+            "type": "introduction",
+            "metadata": {
+                "name": "Lord Cedric D. Ramos",
+                "age": 20,
+                "location": "Cauayan City, Philippines",
+                "role": "Full Stack Developer",
+                "category": "personal"
+            }
+        },
+        {
+            "id": "about_me",
+            "title": "About Me",
+            "content": "When I'm not coding, you can find me experimenting with new technologies, contributing to projects, or enjoying outdoor adventures. I'm constantly learning and staying up-to-date with the latest developments in web development, AI integration, and modern frameworks. I believe in building applications that not only work well but also provide an excellent user experience.",
+            "type": "about",
+            "metadata": {
+                "interests": ["new technologies", "open source", "outdoor adventures"],
+                "category": "personal"
+            }
+        },
+        {
+            "id": "skills_frontend",
+            "title": "Frontend Development Skills",
+            "content": "I'm proficient in JavaScript and TypeScript, with strong experience in React and Next.js for building modern, responsive web applications. I use Tailwind CSS for creating beautiful, maintainable user interfaces. I focus on component-based architecture, state management, and creating performant, accessible web experiences.",
+            "type": "skills",
+            "metadata": {
+                "category": "technical_skills",
+                "proficiency_level": "Intermediate-Advanced",
+                "technologies": ["JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS"],
+                "tags": ["frontend", "UI/UX", "responsive design"]
+            }
+        },
+        {
+            "id": "skills_backend",
+            "title": "Backend Development Skills",
+            "content": "I have experience with Node.js for building server-side applications and APIs. I work with SQL databases for data management and persistence. I understand RESTful API design principles and can create scalable backend solutions that support modern web applications.",
+            "type": "skills",
+            "metadata": {
+                "category": "technical_skills",
+                "proficiency_level": "Intermediate",
+                "technologies": ["Node.js", "SQL", "REST APIs"],
+                "tags": ["backend", "API development", "databases"]
+            }
+        },
+        {
+            "id": "skills_tools",
+            "title": "Development Tools and DevOps",
+            "content": "I'm experienced with version control using Git for collaborative development. I have hands-on experience with Docker for containerization and deployment. I follow modern development workflows and best practices for code quality, testing, and continuous integration.",
+            "type": "skills",
+            "metadata": {
+                "category": "technical_skills",
+                "technologies": ["Git", "Docker", "CI/CD"],
+                "tags": ["DevOps", "version control", "containerization"]
+            }
+        },
+        {
+            "id": "skills_python",
+            "title": "Python Development",
+            "content": "I have knowledge of Python for backend development, scripting, and automation. I've worked with Python frameworks and libraries for building web applications and integrating AI/ML features. I'm comfortable with Python for data processing and API development.",
+            "type": "skills",
+            "metadata": {
+                "category": "technical_skills",
+                "proficiency_level": "Intermediate",
+                "technologies": ["Python"],
+                "tags": ["backend", "scripting", "automation"]
+            }
+        },
+        {
+            "id": "project_digital_twin",
+            "title": "Project - Digital Twin RAG System",
+            "content": "Built a production-ready Digital Twin AI assistant using RAG (Retrieval-Augmented Generation) technology. The system uses Upstash Vector for semantic search, Groq's LLaMA models for fast inference, and implements the Model Context Protocol (MCP) for integration with VS Code and Claude Desktop. Built with Next.js 16, TypeScript, and deployed on Vercel. Features LLM-enhanced query preprocessing and response post-processing for interview preparation.",
+            "type": "project",
+            "metadata": {
+                "technologies": ["Next.js", "TypeScript", "Upstash Vector", "Groq API", "MCP Protocol", "Vercel", "Python"],
+                "category": "projects",
+                "year": 2025,
+                "tags": ["RAG", "AI", "full-stack", "vector database"]
+            }
+        },
+        {
+            "id": "project_cv_website",
+            "title": "Project - AI-Enhanced CV Website",
+            "content": "Developed a modern, responsive CV website using Next.js and Tailwind CSS. Features include a clean, professional design with dark mode support, interactive sections for projects, education, and contact information. Integrated AI chatbot functionality for interactive portfolio exploration. Deployed on Vercel with optimized performance and SEO.",
+            "type": "project",
+            "metadata": {
+                "url": "https://week2-ai-cv-website.vercel.app/",
+                "technologies": ["Next.js", "React", "Tailwind CSS", "Vercel"],
+                "category": "projects",
+                "year": 2025,
+                "tags": ["portfolio", "UI/UX", "responsive design"]
+            }
+        },
+        {
+            "id": "learning_focus",
+            "title": "Current Learning and Development",
+            "content": "I'm currently focusing on advancing my skills in AI integration, particularly RAG systems and vector databases. I'm learning about Model Context Protocol (MCP) for AI agent development, exploring Upstash Vector for semantic search, and mastering advanced Next.js patterns. I'm also deepening my understanding of TypeScript, modern React patterns, and cloud deployment strategies.",
+            "type": "learning",
+            "metadata": {
+                "current_focus": ["AI/RAG systems", "Vector databases", "MCP protocol", "Advanced Next.js", "TypeScript"],
+                "category": "professional_development",
+                "tags": ["continuous learning", "AI", "modern web development"]
+            }
+        },
+        {
+            "id": "career_goals",
+            "title": "Career Goals and Aspirations",
+            "content": "My immediate goal is to secure a Full Stack Developer role where I can apply my skills in React, Next.js, and Node.js while continuing to learn and grow. I'm particularly interested in positions that involve AI integration, modern web technologies, and creating user-centric applications. Long-term, I aspire to become a senior developer and technical leader, contributing to innovative projects that make a real impact. I want to specialize in the intersection of web development and AI, building intelligent, scalable applications.",
+            "type": "career_goals",
+            "metadata": {
+                "short_term": "Full Stack Developer role with AI focus",
+                "long_term": "Senior Developer / Technical Leader",
+                "interests": ["AI integration", "Modern web development", "User-centric design"],
+                "category": "career_development"
+            }
+        },
+        {
+            "id": "contact_info",
+            "title": "Contact and Social Media",
+            "content": "You can reach me through GitHub at github.com/cdrcrmss, LinkedIn at linkedin.com/in/cedric-ramos-548971286, or Facebook at facebook.com/cdrcrmss. I'm open to collaboration opportunities, job offers, and connecting with fellow developers. Feel free to check out my portfolio at week2-ai-cv-website.vercel.app to see my work and download my CV.",
+            "type": "contact",
+            "metadata": {
+                "github": "https://github.com/cdrcrmss",
+                "linkedin": "https://www.linkedin.com/in/cedric-ramos-548971286/",
+                "facebook": "https://www.facebook.com/cdrcrmss",
+                "portfolio": "https://week2-ai-cv-website.vercel.app/",
+                "category": "contact_information"
+            }
+        },
+        {
+            "id": "education",
+            "title": "Education Background",
+            "content": "I'm currently pursuing my education in Computer Science / Information Technology, focusing on web development, software engineering, and modern programming practices. I'm committed to continuous learning through online courses, tutorials, workshops, and hands-on projects. I actively participate in developer communities and stay updated with the latest industry trends and technologies.",
+            "type": "education",
+            "metadata": {
+                "field": "Computer Science / Information Technology",
+                "location": "Cauayan City, Philippines",
+                "category": "education",
+                "learning_methods": ["online courses", "self-study", "hands-on projects", "community participation"]
+            }
+        },
+        {
+            "id": "work_style",
+            "title": "Work Style and Approach",
+            "content": "I approach development with a focus on clean code, user experience, and continuous improvement. I believe in following best practices, writing maintainable code, and creating well-documented solutions. I enjoy collaborating with teams, learning from others, and sharing knowledge. I'm adaptable, quick to learn new technologies, and always looking for ways to improve both my technical skills and the projects I work on.",
+            "type": "work_style",
+            "metadata": {
+                "values": ["clean code", "user experience", "continuous improvement", "collaboration"],
+                "category": "professional_attributes",
+                "tags": ["teamwork", "best practices", "adaptability"]
+            }
+        },
+        {
+            "id": "interview_why_hire",
+            "title": "Why You Should Hire Me",
+            "content": "You should hire me because I bring genuine passion for web development combined with a strong foundation in modern technologies like React, Next.js, and TypeScript. I'm a quick learner who stays current with industry trends and best practices. I focus on creating high-quality, user-friendly applications while writing clean, maintainable code. My recent projects demonstrate my ability to work with cutting-edge technologies like AI/RAG systems and vector databases. I'm eager to contribute to meaningful projects, grow alongside a team, and bring fresh perspectives to problem-solving. Most importantly, I'm dedicated to continuous learning and improvement, making me a valuable long-term asset to any development team.",
+            "type": "interview_prep",
+            "metadata": {
+                "key_strengths": ["passion", "modern tech stack", "quick learner", "quality focus", "AI knowledge"],
+                "category": "interview_preparation"
+            }
+        },
+        {
+            "id": "interview_strengths",
+            "title": "Key Strengths",
+            "content": "My key strengths include: 1) Strong foundation in modern JavaScript/TypeScript and React/Next.js ecosystem, 2) Ability to quickly learn and adapt to new technologies and frameworks, 3) Focus on creating excellent user experiences with clean, responsive designs, 4) Experience with full-stack development from frontend to backend and deployment, 5) Genuine passion for coding and building meaningful applications, 6) Self-motivated and committed to continuous learning and improvement.",
+            "type": "interview_prep",
+            "metadata": {
+                "category": "interview_preparation",
+                "tags": ["strengths", "technical skills", "soft skills"]
+            }
+        },
+        {
+            "id": "interview_challenges",
+            "title": "Overcoming Challenges",
+            "content": "When I face challenges in development, I approach them systematically: I break down complex problems into smaller, manageable pieces, research solutions through documentation and community resources, experiment with different approaches, and learn from both successes and failures. For example, when building my Digital Twin RAG system, I had to learn about vector databases, semantic search, and LLM integration from scratch. I dedicated time to understanding the concepts, studied examples, and iteratively built the solution while documenting my learning process. This experience taught me that persistent learning and hands-on experimentation are key to mastering new technologies.",
+            "type": "interview_prep",
+            "metadata": {
+                "category": "interview_preparation",
+                "tags": ["problem-solving", "learning approach", "resilience"]
+            }
+        }
+    ]
+}
