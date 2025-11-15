@@ -1,0 +1,8 @@
+{
+  "buildCommand": "cd my-portfolio && pnpm install && pnpm build",
+  "outputDirectory": "my-portfolio/.next",
+  "devCommand": "cd my-portfolio && pnpm dev",
+  "installCommand": "cd my-portfolio && pnpm install",
+  "framework": "nextjs",
+  "ignoreCommand": "exit 1"
+}
