@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cedric Ramos - CV</title>
+    <style>
+        @media print {
+            body {
+                margin: 0;
+                padding: 20px;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 40px;
+            background: #fff;
+        }
+        
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #3b82f6;
+            padding-bottom: 20px;
+        }
+        
+        .photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 30px;
+            border: 4px solid #3b82f6;
+        }
+        
+        .header-text h1 {
+            margin: 0;
+            font-size: 36px;
+            color: #1f2937;
+        }
+        
+        .header-text .title {
+            color: #3b82f6;
+            font-size: 20px;
+            margin: 5px 0;
+        }
+        
+        .contact-info {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        
+        .contact-info span {
+            color: #6b7280;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+        }
+        
+        .section h2 {
+            color: #1f2937;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #3b82f6;
+            padding-bottom: 5px;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .skill-category h3 {
+            color: #3b82f6;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        
+        .skill-category ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        
+        .skill-category li {
+            margin-bottom: 5px;
+            color: #4b5563;
+        }
+        
+        .project {
+            margin-bottom: 20px;
+        }
+        
+        .project h3 {
+            color: #1f2937;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .project .year {
+            color: #3b82f6;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .project p {
+            margin: 8px 0;
+            color: #4b5563;
+        }
+        
+        .project ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        
+        .project li {
+            margin-bottom: 5px;
+            color: #6b7280;
+        }
+        
+        .tech {
+            color: #8b5cf6;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        
+        .strengths ul {
+            padding-left: 20px;
+        }
+        
+        .strengths li {
+            margin-bottom: 8px;
+            color: #4b5563;
+        }
+        
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 12px 24px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .print-button:hover {
+            background: #2563eb;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="print-button no-print" onclick="window.print()">📄 Save as PDF</button>
+
+    <div class="header">
+        <img src="cedric-photo.jpg" alt="Cedric Ramos" class="photo">
+        <div class="header-text">
+            <h1>Lord Cedric D. Ramos</h1>
+            <div class="title">Full Stack Developer</div>
+            <div class="contact-info">
+                <span>📍 Cauayan City, Philippines</span>
+                <span>🔗 github.com/cdrcrmss</span>
+                <span>💼 linkedin.com/in/cedric-ramos-548971286</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Summary</h2>
+        <p>
+            Passionate 20-year-old Full Stack Developer with expertise in modern web technologies. Specialized in building scalable applications using React, Next.js, Node.js, and AI integration. Committed to creating innovative solutions and continuously learning
+            new technologies.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Frontend</h3>
+                <ul>
+                    <li>JavaScript, TypeScript</li>
+                    <li>React, Next.js 16</li>
+                    <li>Tailwind CSS</li>
+                    <li>Responsive Design</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Backend</h3>
+                <ul>
+                    <li>Node.js</li>
+                    <li>Python</li>
+                    <li>RESTful APIs</li>
+                    <li>SQL Databases</li>
+                </ul>
+            </div>
+        </div>
+        <div class="skill-category" style="margin-top: 15px;">
+            <h3>Tools & Technologies</h3>
+            <p>Git, GitHub, Docker, Vercel, AI/ML Integration (Upstash Vector, Groq, Ollama)</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Education</h2>
+
+        <div class="project">
+            <h3>St. Paul University Philippines</h3>
+            <p style="margin: 5px 0; color: #3b82f6; font-weight: bold;">Bachelor of Science in Information Technology (BSIT)</p>
+            <div class="year">2023 - Present</div>
+            <p style="margin: 5px 0; font-style: italic;">Currently Enrolled</p>
+        </div>
+
+        <div class="project">
+            <h3>University of Perpetual Help System Laguna - Isabela Campus</h3>
+            <p style="margin: 5px 0; color: #3b82f6; font-weight: bold;">Technical-Vocational-Livelihood - Information and Communications Technology (TVL-ICT)</p>
+            <div class="year">2022 - 2023</div>
+            <p style="margin: 5px 0; font-style: italic;">Graduated with Honors</p>
+        </div>
+
+        <div class="project">
+            <h3>University of Perpetual Help System Laguna - Isabela Campus</h3>
+            <p style="margin: 5px 0; color: #3b82f6; font-weight: bold;">Elementary Education</p>
+            <div class="year">2016 - 2017</div>
+            <p style="margin: 5px 0; font-style: italic;">Graduated</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Projects</h2>
+
+        <div class="project">
+            <h3>Digital Twin RAG System</h3>
+            <div class="year">2025</div>
+            <p>AI-powered interview preparation assistant using Retrieval-Augmented Generation technology</p>
+            <ul>
+                <li>Implemented RAG system with Upstash Vector for semantic search</li>
+                <li>Integrated Groq LLM (LLaMA 3.3) for intelligent response generation</li>
+                <li>Built with Next.js 16, TypeScript, and modern React patterns</li>
+                <li>Features conversation history, export functionality, and dual LLM support</li>
+            </ul>
+            <div class="tech">Tech: Next.js, TypeScript, Upstash Vector, Groq, Ollama, Tailwind CSS</div>
+        </div>
+
+        <div class="project">
+            <h3>AI-Enhanced CV Website</h3>
+            <div class="year">2025</div>
+            <p>Modern, responsive portfolio website with interactive AI chatbot</p>
+            <ul>
+                <li>Designed and developed full-stack portfolio application</li>
+                <li>Implemented dark/light theme switching</li>
+                <li>Integrated AI chatbot for dynamic Q&A about professional background</li>
+                <li>Deployed to Vercel with optimized performance</li>
+            </ul>
+            <div class="tech">Tech: Next.js, React, Tailwind CSS, Vercel</div>
+        </div>
+    </div>
+
+    <div class="section strengths">
+        <h2>Strengths</h2>
+        <ul>
+            <li>Quick learner with strong problem-solving skills</li>
+            <li>Passionate about clean, maintainable code</li>
+            <li>Excellent collaboration and communication abilities</li>
+            <li>Adaptable to new technologies and frameworks</li>
+            <li>Strong attention to detail and user experience</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Career Goals</h2>
+        <p>
+            Seeking opportunities to contribute to innovative projects while continuing to grow as a developer. Interested in roles involving Full Stack Development, AI/ML Integration, Modern Web Applications, and Scalable System Architecture.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Languages</h2>
+        <p><strong>English:</strong> Fluent &nbsp;&nbsp;|&nbsp;&nbsp; <strong>Filipino:</strong> Native</p>
+    </div>
+</body>
+
+</html>

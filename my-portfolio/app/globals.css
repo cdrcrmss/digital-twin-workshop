@@ -1,0 +1,241 @@
+@import "tailwindcss";
+:root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+}
+
+:root.light {
+    --background: #ffffff;
+    --foreground: #171717;
+}
+
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
+}
+
+body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+
+/* Smooth transitions for all elements */
+
+* {
+    transition-property: background-color, border-color, color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+}
+
+
+/* Light mode overrides */
+
+.light {
+    color-scheme: light;
+}
+
+.light .bg-black {
+    background-color: #ffffff !important;
+}
+
+.light .bg-zinc-900 {
+    background-color: #f5f5f5 !important;
+}
+
+.light .bg-zinc-800 {
+    background-color: #e5e5e5 !important;
+}
+
+.light .bg-zinc-950 {
+    background-color: #fafafa !important;
+}
+
+.light .text-white {
+    color: #171717 !important;
+}
+
+.light .text-zinc-100 {
+    color: #27272a !important;
+}
+
+.light .text-zinc-400 {
+    color: #52525b !important;
+}
+
+.light .text-zinc-500 {
+    color: #71717a !important;
+}
+
+.light .text-zinc-300 {
+    color: #171717 !important;
+}
+
+.light .text-zinc-200 {
+    color: #27272a !important;
+}
+
+.light .text-zinc-600 {
+    color: #52525b !important;
+}
+
+.light .text-zinc-700 {
+    color: #3f3f46 !important;
+}
+
+.light .border-zinc-800 {
+    border-color: #e4e4e7 !important;
+}
+
+.light .border-zinc-700 {
+    border-color: #d4d4d8 !important;
+}
+
+.light .border-zinc-300 {
+    border-color: #d4d4d8 !important;
+}
+
+
+/* Purple/Blue accent colors - same in both modes */
+
+.light .text-purple-400,
+.light .text-purple-300,
+.light .text-blue-400,
+.light .text-blue-300,
+.light .text-green-400,
+.light .text-green-300,
+.light .text-red-400,
+.light .text-orange-400,
+.light .text-cyan-400,
+.light .text-yellow-400 {
+    /* Keep accent colors vibrant in light mode */
+    filter: saturate(1.2) brightness(0.9);
+}
+
+
+/* Background accent colors for light mode */
+
+.light .bg-purple-900\/30 {
+    background-color: rgba(147, 51, 234, 0.15) !important;
+}
+
+.light .bg-blue-900\/30 {
+    background-color: rgba(59, 130, 246, 0.15) !important;
+}
+
+.light .bg-green-900\/30 {
+    background-color: rgba(34, 197, 94, 0.15) !important;
+}
+
+.light .bg-red-900\/30 {
+    background-color: rgba(239, 68, 68, 0.15) !important;
+}
+
+.light .bg-orange-900\/30 {
+    background-color: rgba(249, 115, 22, 0.15) !important;
+}
+
+.light .bg-yellow-900\/30 {
+    background-color: rgba(234, 179, 8, 0.15) !important;
+}
+
+.light .bg-cyan-900\/30 {
+    background-color: rgba(6, 182, 212, 0.15) !important;
+}
+
+.light .bg-purple-900\/20 {
+    background-color: rgba(147, 51, 234, 0.1) !important;
+}
+
+.light .bg-blue-900\/20 {
+    background-color: rgba(59, 130, 246, 0.1) !important;
+}
+
+.light .bg-green-900\/20 {
+    background-color: rgba(34, 197, 94, 0.1) !important;
+}
+
+.light .bg-red-900\/20 {
+    background-color: rgba(239, 68, 68, 0.1) !important;
+}
+
+.light .bg-black\/20 {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.light .bg-black\/30 {
+    background-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+
+/* Border accent colors for light mode */
+
+.light .border-purple-800 {
+    border-color: rgba(147, 51, 234, 0.3) !important;
+}
+
+.light .border-purple-500 {
+    border-color: rgba(168, 85, 247, 0.4) !important;
+}
+
+.light .border-blue-800 {
+    border-color: rgba(59, 130, 246, 0.3) !important;
+}
+
+.light .border-blue-500 {
+    border-color: rgba(59, 130, 246, 0.4) !important;
+}
+
+.light .border-green-800 {
+    border-color: rgba(34, 197, 94, 0.3) !important;
+}
+
+.light .border-red-800 {
+    border-color: rgba(239, 68, 68, 0.3) !important;
+}
+
+.light .border-orange-800 {
+    border-color: rgba(249, 115, 22, 0.3) !important;
+}
+
+.light .border-cyan-800 {
+    border-color: rgba(6, 182, 212, 0.3) !important;
+}
+
+
+/* Backdrop blur adjustments for light mode */
+
+.light nav {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.light .backdrop-blur-md {
+    backdrop-filter: blur(12px);
+}
+
+
+/* Card hover effects */
+
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.light .hover-lift:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}

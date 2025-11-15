@@ -1,0 +1,100 @@
+# Lord Cedric D. Ramos
+**Full Stack Developer**
+
+📧 Email: cedricramos@example.com  
+📱 Phone: +63 XXX XXX XXXX  
+📍 Location: Cauayan City, Philippines  
+🔗 GitHub: github.com/cdrcrmss  
+🔗 LinkedIn: linkedin.com/in/cedric-ramos-548971286
+
+---
+
+## Summary
+Passionate 20-year-old Full Stack Developer with expertise in modern web technologies. Specialized in building scalable applications using React, Next.js, Node.js, and AI integration. Committed to creating innovative solutions and continuously learning new technologies.
+
+---
+
+## Technical Skills
+
+**Frontend:**
+- JavaScript, TypeScript
+- React, Next.js 16
+- Tailwind CSS
+- Responsive Design
+
+**Backend:**
+- Node.js
+- Python
+- RESTful APIs
+- Database Design (SQL)
+
+**Tools & Technologies:**
+- Git & GitHub
+- Docker
+- Vercel Deployment
+- AI/ML Integration (Upstash Vector, Groq)
+
+---
+
+## Projects
+
+### Digital Twin RAG System (2025)
+AI-powered interview preparation assistant using Retrieval-Augmented Generation technology
+- Implemented RAG system with Upstash Vector for semantic search
+- Integrated Groq LLM (LLaMA 3.3) for intelligent response generation
+- Built with Next.js 16, TypeScript, and modern React patterns
+- Features conversation history, export functionality, and dual LLM support (Groq/Ollama)
+
+**Tech Stack:** Next.js, TypeScript, Upstash Vector, Groq, Ollama, Tailwind CSS
+
+### AI-Enhanced CV Website (2025)
+Modern, responsive portfolio website with interactive AI chatbot
+- Designed and developed full-stack portfolio application
+- Implemented dark/light theme switching
+- Integrated AI chatbot for dynamic Q&A about professional background
+- Deployed to Vercel with optimized performance
+
+**Tech Stack:** Next.js, React, Tailwind CSS, Vercel
+**Live Demo:** https://week2-ai-cv-website.vercel.app/
+
+---
+
+## Education
+
+**Current Studies**
+- Self-taught Full Stack Developer
+- Continuous learning through online courses and hands-on projects
+- Focus on modern web development and AI integration
+
+---
+
+## Strengths
+
+- Quick learner with strong problem-solving skills
+- Passionate about clean, maintainable code
+- Excellent collaboration and communication abilities
+- Adaptable to new technologies and frameworks
+- Strong attention to detail and user experience
+
+---
+
+## Career Goals
+
+Seeking opportunities to contribute to innovative projects while continuing to grow as a developer. Interested in roles that involve:
+- Full Stack Development
+- AI/ML Integration
+- Modern Web Applications
+- Scalable System Architecture
+
+---
+
+## Languages
+
+- English: Fluent
+- Filipino: Native
+
+---
+
+**References available upon request**
+
+Last Updated: November 2025
