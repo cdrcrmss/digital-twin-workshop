@@ -54,7 +54,6 @@ export default function Home() {
             <a href="/professional" className="hover:text-[#00d9a3] transition">Branding</a>
             <a href="#contact" className="hover:text-[#00d9a3] transition">Contact</a>
           </div>
-          <CVViewer />
         </div>
       </nav>
 
@@ -86,6 +85,7 @@ export default function Home() {
               <a href="#portfolio" className="btn-outline flex items-center gap-2">
                 View Work <ArrowRight className="w-4 h-4" />
               </a>
+              <CVViewer />
             </div>
           </div>
 
