@@ -5,16 +5,16 @@ import { Github, Linkedin, Facebook, Code, Sparkles, Briefcase, GraduationCap } 
 
 export default function Home() {
   const skills = [
-    { name: 'JavaScript', icon: '🟨' },
-    { name: 'TypeScript', icon: '🔷' },
-    { name: 'React', icon: '⚛️' },
-    { name: 'Next.js', icon: '▲' },
-    { name: 'Node.js', icon: '🟢' },
-    { name: 'Tailwind CSS', icon: '🎨' },
-    { name: 'Python', icon: '🐍' },
-    { name: 'SQL', icon: '🗄️' },
-    { name: 'Git', icon: '📚' },
-    { name: 'Docker', icon: '🐳' },
+    { name: 'JavaScript' },
+    { name: 'TypeScript' },
+    { name: 'React' },
+    { name: 'Next.js' },
+    { name: 'Node.js' },
+    { name: 'Tailwind CSS' },
+    { name: 'Python' },
+    { name: 'SQL' },
+    { name: 'Git' },
+    { name: 'Docker' },
   ];
 
   const projects = [
@@ -42,7 +42,7 @@ export default function Home() {
       <ThemeToggle />
       
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-black/80 light:bg-white/80 backdrop-blur-md border-b border-zinc-800 light:border-zinc-200 z-40">
+      <nav className="glass fixed top-0 w-full border-b border-white/10 z-40">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="text-xl font-bold">
             <a href="/" className="text-gradient hover:opacity-80 transition">CR</a>
@@ -87,7 +87,7 @@ export default function Home() {
           
           <p className="text-lg text-zinc-500 max-w-2xl mx-auto mb-8">
             Passionate about building modern web applications with React, Next.js, and AI integration. 
-            Based in Cauayan City, Philippines 🇵🇭
+            Based in Cauayan City, Philippines
           </p>
           
           <div className="flex gap-4 justify-center mb-8">
@@ -137,7 +137,7 @@ export default function Home() {
               About <span className="text-gradient">Me</span>
             </h2>
           </div>
-          <div className="bg-zinc-900 light:bg-zinc-100 rounded-2xl p-8 border border-zinc-800 light:border-zinc-300 hover-lift shadow-xl">
+          <div className="card">
             <p className="text-lg text-zinc-300 light:text-black mb-6 leading-relaxed">
               I'm a 20-year-old aspiring Full Stack Developer from Cauayan City, Philippines. 
               I'm deeply passionate about web development and continuously exploring the world of 
@@ -169,11 +169,13 @@ export default function Home() {
             {skills.map((skill, index) => (
               <div
                 key={skill.name}
-                className="bg-zinc-900 light:bg-white hover:bg-zinc-800 light:hover:bg-zinc-50 border border-zinc-800 light:border-zinc-300 rounded-xl p-6 text-center transition-all duration-300 cursor-pointer group hover-lift shadow-lg"
+                className="card group cursor-pointer"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="text-4xl mb-3 group-hover:scale-125 transition-transform duration-300">{skill.icon}</div>
-                <p className="font-medium text-white light:text-black">{skill.name}</p>
+                <div className="h-12 w-12 mx-auto mb-3 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Code className="w-6 h-6 text-purple-400" />
+                </div>
+                <p className="font-semibold text-center text-sm">{skill.name}</p>
               </div>
             ))}
           </div>
@@ -193,19 +195,19 @@ export default function Home() {
             {projects.map((project) => (
               <div
                 key={project.title}
-                className="bg-zinc-900 light:bg-zinc-100 border border-zinc-800 light:border-zinc-300 rounded-2xl p-6 hover:border-purple-500/50 transition-all duration-300 group hover-lift shadow-xl"
+                className="project-card group"
               >
                 <div className="flex items-start justify-between mb-4">
                   <Code className="w-8 h-8 text-purple-400" />
                   <span className="text-sm text-zinc-500">{project.year}</span>
                 </div>
-                <h3 className="text-xl font-bold mb-3 group-hover:text-gradient transition">{project.title}</h3>
+                <h3 className="text-xl font-bold mb-3 group-hover:text-purple-400 transition">{project.title}</h3>
                 <p className="text-zinc-400 mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 bg-zinc-800 text-xs rounded-full text-purple-400"
+                      className="skill-badge"
                     >
                       {tech}
                     </span>
@@ -240,7 +242,7 @@ export default function Home() {
           <div className="flex gap-4 justify-center">
             <a
               href="mailto:contact@cedricramos.dev"
-              className="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 rounded-full font-medium transition flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-105"
+              className="btn-primary flex items-center gap-2"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
