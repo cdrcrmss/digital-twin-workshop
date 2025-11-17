@@ -1,4 +1,4 @@
-# 🚀 Deployment Guide - Cedric's AI Portfolio
+# Deployment Guide - Cedric's AI Portfolio
 
 ## Prerequisites
 - GitHub account

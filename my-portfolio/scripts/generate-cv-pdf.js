@@ -3,7 +3,7 @@ const path = require('path');
 const fs = require('fs');
 
 async function generatePDF() {
-    console.log('🚀 Starting PDF generation...');
+    console.log('Starting PDF generation...');
 
     const htmlPath = path.join(__dirname, '..', 'public', 'cv-template.html');
     const photoPath = path.join(__dirname, '..', 'public', 'cedric-photo.jpg');

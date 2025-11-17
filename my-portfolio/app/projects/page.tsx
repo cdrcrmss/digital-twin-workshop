@@ -1,8 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
-import { ArrowLeft, ExternalLink, Github, Calendar, Code, Zap, Database, Brain } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Github, Calendar, Code, Zap, Database, Brain, Globe, Server, FileCode } from 'lucide-react';
 
 interface Project {
   id: string;
@@ -18,7 +17,7 @@ interface Project {
   githubUrl?: string;
   liveUrl?: string;
   category: string;
-  icon: string;
+  IconComponent: React.ComponentType<{ className?: string }>;
 }
 
 const projects: Project[] = [
@@ -50,7 +49,7 @@ const projects: Project[] = [
     githubUrl: 'https://github.com/cdrcrmss',
     liveUrl: 'http://localhost:3000',
     category: 'AI/ML',
-    icon: '🤖'
+    IconComponent: Brain
   },
   {
     id: 'cv-website',
@@ -80,7 +79,7 @@ const projects: Project[] = [
     githubUrl: 'https://github.com/cdrcrmss',
     liveUrl: 'https://week2-ai-cv-website.vercel.app/',
     category: 'Full Stack',
-    icon: '💼'
+    IconComponent: Globe
   },
   {
     id: 'vector-embeddings',
@@ -107,7 +106,7 @@ const projects: Project[] = [
     ],
     githubUrl: 'https://github.com/cdrcrmss',
     category: 'AI/ML',
-    icon: '🗄️'
+    IconComponent: Database
   },
   {
     id: 'llm-integration',
@@ -135,7 +134,7 @@ const projects: Project[] = [
     ],
     githubUrl: 'https://github.com/cdrcrmss',
     category: 'AI/ML',
-    icon: '🧠'
+    IconComponent: Zap
   },
   {
     id: 'mcp-protocol',
@@ -163,7 +162,7 @@ const projects: Project[] = [
     ],
     githubUrl: 'https://github.com/cdrcrmss',
     category: 'Backend',
-    icon: '🔌'
+    IconComponent: Server
   },
   {
     id: 'star-methodology',
@@ -190,7 +189,7 @@ const projects: Project[] = [
     ],
     githubUrl: 'https://github.com/cdrcrmss',
     category: 'Professional Development',
-    icon: '⭐'
+    IconComponent: FileCode
   }
 ];
 
@@ -249,7 +248,9 @@ export default function ProjectsPage() {
             >
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center gap-3">
-                  <span className="text-4xl">{project.icon}</span>
+                  <div className="p-3 bg-purple-900/30 border border-purple-800 rounded-lg">
+                    <project.IconComponent className="w-6 h-6 text-purple-400" />
+                  </div>
                   <div>
                     <div className="text-sm text-purple-400 font-semibold">Week {project.week}</div>
                     <h3 className="text-xl font-bold group-hover:text-purple-400 transition-colors">
@@ -308,7 +309,9 @@ export default function ProjectsPage() {
               <div className="sticky top-0 bg-zinc-900 light:bg-white border-b border-zinc-800 light:border-zinc-300 p-6 flex justify-between items-start">
                 <div>
                   <div className="flex items-center gap-3 mb-2">
-                    <span className="text-5xl">{selectedProject.icon}</span>
+                    <div className="p-4 bg-purple-900/30 border border-purple-800 rounded-xl">
+                      <selectedProject.IconComponent className="w-8 h-8 text-purple-400" />
+                    </div>
                     <div>
                       <div className="text-sm text-purple-400 font-semibold">Week {selectedProject.week}</div>
                       <h2 className="text-3xl font-bold">{selectedProject.title}</h2>

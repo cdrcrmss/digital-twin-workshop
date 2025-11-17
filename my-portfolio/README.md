@@ -1,22 +1,22 @@
-# 🎯 Cedric's AI-Powered Portfolio
+# Cedric's AI-Powered Portfolio
 
 > A Next.js portfolio website with an intelligent AI chatbot powered by RAG (Retrieval-Augmented Generation)
 
-## ✨ Features
+## Features
 
-- **🎨 Modern Portfolio**: Sleek, responsive design with Hero, About, Skills, Projects, and Contact sections
-- **🤖 AI Chatbot**: Smart assistant that answers questions about professional background
-- **🧠 RAG Technology**: Uses Upstash Vector for semantic search across profile data
-- **⚡ LLM Integration**: 
+- **Modern Portfolio**: Sleek, responsive design with Hero, About, Skills, Projects, and Contact sections
+- **AI Chatbot**: Smart assistant that answers questions about professional background
+- **RAG Technology**: Uses Upstash Vector for semantic search across profile data
+- **LLM Integration**: 
   - **Groq** (Cloud): Fast, production-ready LLM responses
   - **Ollama** (Local): Privacy-focused, offline-capable alternative
-- **💬 Conversation Features**:
+- **Conversation Features**:
   - Persistent chat history (localStorage)
   - Export conversations as text files
   - Clear chat history
-- **🌙 Dark Mode**: Beautiful dark theme optimized for readability
+- **Dark Mode**: Beautiful dark theme optimized for readability
 
-## 🚀 Getting Started
+## Getting Started
 
 First, install dependencies and run the development server:
 

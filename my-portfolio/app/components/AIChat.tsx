@@ -85,13 +85,12 @@ export function AIChat() {
     setIsLoading(true);
 
     try {
-      // Try to connect to the MCP server
-      const response = await fetch('http://localhost:3000/api/mcp', {
+      // Connect to the portfolio's API route
+      const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
           question: userMessage,
-          enhanced: true 
         }),
       });
 
@@ -115,15 +114,15 @@ export function AIChat() {
       console.error('Error:', error);
       
       // Provide helpful error messages
-      let errorMessage = 'Sorry, I\'m having trouble connecting to my AI brain. ';
+      let errorMessage = 'Sorry, I\'m having trouble right now. ';
       
       if (error instanceof TypeError && error.message.includes('fetch')) {
-        errorMessage += 'Make sure the Digital Twin MCP server is running on http://localhost:3000';
+        errorMessage += 'Please check your internet connection and try again.';
       } else if (error instanceof Error) {
         if (error.message.includes('404') || error.message.includes('Not Found')) {
-          errorMessage += 'The MCP API endpoint is not responding. Please check if the server is properly configured.';
+          errorMessage += 'The AI service is currently unavailable.';
         } else {
-          errorMessage += `Error: ${error.message}`;
+          errorMessage += 'Please try again later.';
         }
       }
       
@@ -209,19 +208,19 @@ export function AIChat() {
                     onClick={() => setInput("What are Cedric's technical skills?")}
                     className="block w-full text-left px-4 py-2 bg-zinc-800 hover:bg-zinc-700 rounded-lg text-sm transition"
                   >
-                    💻 What are his technical skills?
+                    What are his technical skills?
                   </button>
                   <button
                     onClick={() => setInput("Tell me about his projects")}
                     className="block w-full text-left px-4 py-2 bg-zinc-800 hover:bg-zinc-700 rounded-lg text-sm transition"
                   >
-                    🚀 Tell me about his projects
+                    Tell me about his projects
                   </button>
                   <button
                     onClick={() => setInput("What makes Cedric a great developer?")}
                     className="block w-full text-left px-4 py-2 bg-zinc-800 hover:bg-zinc-700 rounded-lg text-sm transition"
                   >
-                    ⭐ What makes him special?
+                    What makes him special?
                   </button>
                 </div>
               </div>
