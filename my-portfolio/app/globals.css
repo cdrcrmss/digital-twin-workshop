@@ -236,17 +236,12 @@
     transform: rotate(45deg);
 }
 
+@import "tailwindcss";
 
-/* Light Mode Overrides */
-
-.light {
-    --color-dark-bg: #ffffff;
-    --color-dark-surface: #f8f9fa;
-    --color-dark-border: #e5e7eb;
-}
+/* Light Mode Overrides - Clean green highlights */
 
 .light .text-gradient {
-    background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+    background: linear-gradient(135deg, #00d9a3 0%, #00f5c4 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -261,70 +256,70 @@
 
 .light .stats-badge {
     background: white;
-    border-color: #1f2937;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-color: #00d9a3;
+    box-shadow: 0 10px 30px rgba(0, 217, 163, 0.2);
 }
 
 .light .stats-badge .text-2xl {
-    color: #1f2937 !important;
+    color: #00d9a3 !important;
 }
 
 .light .modern-card:hover,
 .light .service-card:hover,
 .light .project-card:hover {
-    border-color: #1f2937;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    border-color: #00d9a3;
+    box-shadow: 0 20px 60px rgba(0, 217, 163, 0.15);
 }
 
 .light .skill-badge {
-    background: #f3f4f6;
-    border-color: #d1d5db;
-    color: #1f2937;
+    background: rgba(0, 217, 163, 0.1);
+    border-color: rgba(0, 217, 163, 0.3);
+    color: #00b589;
 }
 
 .light .skill-badge:hover {
-    background: #e5e7eb;
-    border-color: #9ca3af;
+    background: rgba(0, 217, 163, 0.2);
+    border-color: #00d9a3;
 }
 
 .light .btn-primary {
-    background: #1f2937;
+    background: #00d9a3;
     color: white;
 }
 
 .light .btn-primary:hover {
-    background: #111827;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    background: #00f5c4;
+    box-shadow: 0 10px 30px rgba(0, 217, 163, 0.4);
 }
 
 .light .btn-outline {
-    color: #1f2937;
-    border-color: #1f2937;
+    color: #00d9a3;
+    border-color: #00d9a3;
 }
 
 .light .btn-outline:hover {
-    background: rgba(31, 41, 55, 0.05);
+    background: rgba(0, 217, 163, 0.05);
 }
 
 .light .service-card.active {
-    background: #1f2937;
+    background: #00d9a3;
     color: white;
 }
 
 .light .hero-blob {
-    background: radial-gradient(circle, rgba(31, 41, 55, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(0, 217, 163, 0.15) 0%, transparent 70%);
 }
 
 .light .geo-circle,
 .light .geo-square {
-    border-color: #d1d5db;
-    opacity: 0.3;
+    border-color: #00d9a3;
+    opacity: 0.2;
 }
 
 .light .project-card:hover {
-    border-color: #1f2937;
+    border-color: #00d9a3;
 }
 
 .light .section-title::after {
-    background: #1f2937;
+    background: #00d9a3;
 }
