@@ -1,33 +1,12 @@
 import { AIChat } from './components/AIChat';
 import { ThemeToggle } from './components/ThemeToggle';
 import { CVViewer } from './components/CVViewer';
-import { Github, Linkedin, Facebook, Mail, Download, ArrowRight, Code2, Palette, Database, Sparkles, Briefcase } from 'lucide-react';
+import { Github, Linkedin, Facebook, Mail, ArrowRight, Code2, Sparkles, Briefcase } from 'lucide-react';
 
 export default function Home() {
   const skills = [
     'JavaScript', 'TypeScript', 'React', 'Next.js', 'Node.js',
     'Tailwind CSS', 'Python', 'SQL', 'Git', 'Docker'
-  ];
-
-  const services = [
-    {
-      title: 'UI & UX Design',
-      description: 'Creating intuitive and beautiful user interfaces with modern design principles.',
-      icon: Palette,
-      active: true
-    },
-    {
-      title: 'Full Stack Development',
-      description: 'Building scalable web applications from frontend to backend.',
-      icon: Code2,
-      active: false
-    },
-    {
-      title: 'Database Design',
-      description: 'Designing efficient and scalable database architectures.',
-      icon: Database,
-      active: false
-    },
   ];
 
   const projects = [
@@ -66,15 +45,16 @@ export default function Home() {
             <a href="/" className="text-gradient hover:opacity-80 transition">CR</a>
           </div>
           <div className="hidden lg:flex gap-8 text-sm font-medium">
-            <a href="#home" className="hover:text-[#00d9a3] transition">Home</a>
-            <a href="#about" className="hover:text-[#00d9a3] transition">About</a>
-            <a href="#services" className="hover:text-[#00d9a3] transition">Services</a>
-            <a href="#portfolio" className="hover:text-[#00d9a3] transition">Portfolio</a>
+            <a href="/projects" className="hover:text-[#00d9a3] transition">Projects</a>
+            <a href="/advanced-features" className="hover:text-[#00d9a3] transition">Advanced</a>
+            <a href="/optimization" className="hover:text-[#00d9a3] transition">Optimization</a>
+            <a href="/monitoring" className="hover:text-[#00d9a3] transition">Monitoring</a>
+            <a href="/mcp-integration" className="hover:text-[#00d9a3] transition">MCP</a>
+            <a href="/demo" className="hover:text-[#00d9a3] transition">Demo</a>
+            <a href="/professional" className="hover:text-[#00d9a3] transition">Branding</a>
             <a href="#contact" className="hover:text-[#00d9a3] transition">Contact</a>
           </div>
-          <a href="#contact" className="hidden lg:flex items-center gap-2 btn-primary">
-            LET'S TALK <ArrowRight className="w-4 h-4" />
-          </a>
+          <CVViewer />
         </div>
       </nav>
 
@@ -91,8 +71,8 @@ export default function Home() {
             </div>
             
             <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-              HELLO I'M A<br />
-              <span className="text-gradient">Full Stack Developer</span>
+              HELLO I'M<br />
+              <span className="text-gradient">Cedric Ramos</span>
             </h1>
             
             <p className="text-lg text-gray-400 light:text-gray-600 max-w-lg">
@@ -100,10 +80,12 @@ export default function Home() {
             </p>
             
             <div className="flex flex-wrap gap-4">
-              <a href="#contact" className="btn-primary flex items-center gap-2">
-                <Mail className="w-5 h-5" /> HIRE ME
+              <a href="mailto:contact@cedricramos.dev" className="btn-primary flex items-center gap-2">
+                <Mail className="w-5 h-5" /> Contact Me
               </a>
-              <CVViewer />
+              <a href="#portfolio" className="btn-outline flex items-center gap-2">
+                View Work <ArrowRight className="w-4 h-4" />
+              </a>
             </div>
           </div>
 
@@ -122,7 +104,7 @@ export default function Home() {
 
               {/* Stats Badges */}
               <div className="stats-badge" style={{ top: '10%', right: '-10px' }}>
-                <div className="text-2xl font-bold text-[#00d9a3]">16+</div>
+                <div className="text-2xl font-bold text-[#00d9a3]">2</div>
                 <div className="text-xs text-gray-400">Projects</div>
               </div>
               <div className="stats-badge" style={{ bottom: '30%', left: '-10px' }}>
@@ -134,44 +116,6 @@ export default function Home() {
                 <div className="text-xs text-gray-400">Quality</div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section id="services" className="py-20 px-6 bg-[#1a1f26] light:bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="section-title text-4xl md:text-5xl font-bold mb-4">
-              My <span className="text-gradient">Services</span>
-            </h2>
-            <p className="text-gray-400 light:text-gray-600 max-w-2xl mx-auto">
-              Delivering high-quality solutions tailored to your needs
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {services.map((service, index) => {
-              const Icon = service.icon;
-              return (
-                <div
-                  key={service.title}
-                  className={`service-card ${service.active ? 'active' : ''}`}
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div className="mb-6">
-                    <div className="w-16 h-16 rounded-lg bg-[#00d9a3]/10 flex items-center justify-center mb-4">
-                      <Icon className="w-8 h-8 text-[#00d9a3]" />
-                    </div>
-                    <h3 className="text-2xl font-bold mb-3">{service.title}</h3>
-                    <p className="text-gray-400 light:text-gray-600">{service.description}</p>
-                  </div>
-                  <div className="mt-auto">
-                    <ArrowRight className="w-6 h-6 text-[#00d9a3]" />
-                  </div>
-                </div>
-              );
-            })}
           </div>
         </div>
       </section>
