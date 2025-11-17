@@ -2,39 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 @layer components {
-    /* Text Gradient */
     .text-gradient {
         @apply bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent;
     }
-    /* Professional Card */
     .card {
         @apply bg-zinc-900 border border-zinc-800 rounded-2xl p-6 transition-all duration-300;
         @apply hover: border-indigo-500/50 hover: shadow-lg hover: shadow-indigo-500/10 hover: -translate-y-1;
     }
-    /* Glass Navigation */
     .glass {
         @apply bg-black/60 backdrop-blur-xl border-b border-white/5;
     }
-    /* Primary Button */
     .btn-primary {
         @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold;
         @apply bg-gradient-to-r from-indigo-600 to-purple-600 text-white;
         @apply hover: from-indigo-700 hover: to-purple-700 transition-all duration-300;
         @apply hover: shadow-lg hover: shadow-indigo-500/30 hover: -translate-y-0.5;
     }
-    /* Secondary Button */
     .btn-secondary {
         @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold;
         @apply bg-zinc-800 border border-zinc-700 text-white;
         @apply hover: bg-zinc-700 hover: border-indigo-500/50 transition-all duration-300;
     }
-    /* Skill Badge */
     .skill-badge {
         @apply inline-block px-4 py-2 rounded-lg text-sm font-medium;
         @apply bg-zinc-800 border border-zinc-700 text-zinc-300;
         @apply hover: border-indigo-500 hover: text-indigo-400 transition-all duration-300;
     }
-    /* Project Card with Top Border Animation */
     .project-card {
         @apply relative bg-zinc-900 border border-zinc-800 rounded-2xl p-8;
         @apply transition-all duration-500 overflow-hidden;
@@ -50,9 +43,6 @@
         @apply scale-x-100;
     }
 }
-
-
-/* Light Mode Overrides */
 
 .light {
     @apply bg-white text-black;
