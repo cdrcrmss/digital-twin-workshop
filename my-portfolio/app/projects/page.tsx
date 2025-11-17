@@ -230,7 +230,7 @@ export default function ProjectsPage() {
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-5 py-2 rounded-lg font-medium transition-all ${
                   selectedCategory === cat
-                    ? 'bg-purple-600 text-white shadow-lg shadow-purple-500/50'
+                    ? 'btn-primary'
                     : 'bg-zinc-800 light:bg-zinc-200 text-zinc-300 light:text-zinc-700 hover:bg-zinc-700 light:hover:bg-zinc-300'
                 }`}
               >
@@ -246,7 +246,7 @@ export default function ProjectsPage() {
             <div
               key={project.id}
               onClick={() => setSelectedProject(project)}
-              className="bg-zinc-900 light:bg-zinc-100 rounded-xl p-6 border border-zinc-800 light:border-zinc-300 hover:border-purple-500 transition-all cursor-pointer group hover:shadow-xl hover:shadow-purple-500/20"
+              className="project-card cursor-pointer group"
             >
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center gap-3">
@@ -274,7 +274,7 @@ export default function ProjectsPage() {
                 {project.technologies.slice(0, 4).map((tech) => (
                   <span
                     key={tech}
-                    className="text-xs px-2 py-1 bg-blue-900/30 text-blue-300 rounded border border-blue-800"
+                    className="skill-badge"
                   >
                     {tech}
                   </span>
@@ -307,8 +307,8 @@ export default function ProjectsPage() {
         {/* Project Detail Modal */}
         {selectedProject && (
           <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-6">
-            <div className="bg-zinc-900 light:bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-zinc-800 light:border-zinc-300">
-              <div className="sticky top-0 bg-zinc-900 light:bg-white border-b border-zinc-800 light:border-zinc-300 p-6 flex justify-between items-start">
+            <div className="card max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+              <div className="sticky top-0 card border-b border-zinc-800 light:border-zinc-300 p-6 flex justify-between items-start">
                 <div>
                   <div className="flex items-center gap-3 mb-2">
                     <div className="p-4 bg-purple-900/30 border border-purple-800 rounded-xl">
@@ -355,7 +355,7 @@ export default function ProjectsPage() {
                     {selectedProject.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-lg border border-blue-800 text-sm"
+                        className="skill-badge"
                       >
                         {tech}
                       </span>
@@ -396,7 +396,7 @@ export default function ProjectsPage() {
                       href={selectedProject.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg transition-colors"
+                      className="btn-primary flex items-center gap-2"
                     >
                       <ExternalLink className="w-4 h-4" />
                       View Live Demo
@@ -407,7 +407,7 @@ export default function ProjectsPage() {
                       href={selectedProject.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-6 py-3 bg-zinc-800 light:bg-zinc-200 hover:bg-zinc-700 light:hover:bg-zinc-300 rounded-lg transition-colors"
+                      className="btn-secondary flex items-center gap-2"
                     >
                       <Github className="w-4 h-4" />
                       View Source
