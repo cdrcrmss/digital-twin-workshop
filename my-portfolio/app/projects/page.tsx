@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { ArrowLeft, ExternalLink, Github, Calendar, Code, Zap, Database, Brain, Globe, Server, FileCode } from 'lucide-react';
 
 interface Project {
