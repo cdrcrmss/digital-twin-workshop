@@ -1,4 +1,17 @@
 import { NextResponse } from 'next/server';
+import { Index } from '@upstash/vector';
+import Groq from 'groq-sdk';
+
+// Initialize Upstash Vector
+const index = new Index({
+  url: process.env.UPSTASH_VECTOR_REST_URL!,
+  token: process.env.UPSTASH_VECTOR_REST_TOKEN!,
+});
+
+// Initialize Groq
+const groq = new Groq({
+  apiKey: process.env.GROQ_API_KEY!,
+});
 
 // Security: Detect malicious input patterns
 function isMaliciousInput(input: string): boolean {
@@ -66,56 +79,63 @@ export async function POST(req: Request) {
       });
     }
     
-    // Forward to the MCP server on port 3000
-    const mcpUrl = process.env.MCP_SERVER_URL || 'http://localhost:3000/api/mcp';
+    // Perform RAG query with Upstash Vector
+    const searchResults = await index.query({
+      data: sanitizedQuestion,
+      topK: 3,
+      includeMetadata: true,
+    });
     
-    try {
-      const response = await fetch(mcpUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          question: sanitizedQuestion,
-          enhanced: true,
-        }),
+    // Extract context from search results
+    const context = searchResults
+      .map(result => result.metadata?.content || '')
+      .filter(Boolean)
+      .join('\n\n');
+
+    let answer: string;
+    
+    if (!context) {
+      answer = "I don't have specific information to answer that question. Could you ask about Cedric's experience, skills, projects, or career goals?";
+    } else {
+      // Generate response using Groq LLM
+      const completion = await groq.chat.completions.create({
+        messages: [
+          {
+            role: "system",
+            content: `You are Cedric's AI assistant. Answer questions in first person about his professional background, skills, and experience based on the provided context. Be concise, professional, and interview-ready. Use STAR format (Situation-Task-Action-Result) when telling stories. If the question is inappropriate or not related to professional topics, respond with "I don't know" and redirect to professional topics.`
+          },
+          {
+            role: "user",
+            content: `Context about Cedric:\n${context}\n\nQuestion: ${sanitizedQuestion}\n\nAnswer:`
+          }
+        ],
+        model: "llama-3.3-70b-versatile",
+        temperature: 0.7,
+        max_tokens: 500,
       });
       
-      if (!response.ok) {
-        throw new Error(`MCP server error: ${response.status}`);
-      }
-      
-      const data = await response.json();
+      answer = completion.choices[0]?.message?.content || "I couldn't generate a response.";
       
       // Additional security: Filter the response
-      if (data.answer) {
-        // Ensure the AI doesn't reveal system prompts or internal details
-        const filteredAnswer = data.answer
-          .replace(/system prompt|internal|confidential|api key|token|password/gi, '[REDACTED]');
-        
-        return NextResponse.json({
-          answer: filteredAnswer,
-          sources: data.sources,
-        });
-      }
-      
-      return NextResponse.json({
-        answer: "I don't know. Please ask me about Cedric's skills, projects, or professional experience.",
-      });
-      
-    } catch (mcpError) {
-      console.error('MCP server connection error:', mcpError);
-      
-      // Fallback response when MCP server is unavailable
-      return NextResponse.json({
-        answer: "I'm currently offline. Please try again later or contact Cedric directly.",
-      });
+      answer = answer.replace(/system prompt|internal|confidential|api key|token|password/gi, '[REDACTED]');
     }
+    
+    return NextResponse.json({
+      answer,
+      sources: searchResults.map(r => ({
+        title: r.metadata?.title,
+        type: r.metadata?.type,
+        score: r.score,
+      })),
+    });
     
   } catch (error) {
     console.error('Error processing chat request:', error);
-    return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
-    );
+    
+    // Friendly error message - don't expose internal errors
+    return NextResponse.json({
+      answer: "I'm currently experiencing technical difficulties. Please try again in a moment.",
+    });
   }
 }
 
