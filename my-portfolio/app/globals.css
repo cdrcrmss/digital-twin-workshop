@@ -1,4 +1,6 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* Modern Professional Color System */
 
@@ -20,13 +22,6 @@
     --accent-primary: #4f46e5;
     --accent-secondary: #7c3aed;
     --accent-tertiary: #db2777;
-}
-
-@theme inline {
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-    --font-sans: var(--font-geist-sans);
-    --font-mono: var(--font-geist-mono);
 }
 
 
