@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, ExternalLink, Github, Calendar, Code, Zap, Database, Brain, Globe, Server, FileCode } from 'lucide-react';
 
+// Project showcase page with professional icons
 interface Project {
   id: string;
   week: number;
