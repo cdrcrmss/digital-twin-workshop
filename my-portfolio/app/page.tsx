@@ -26,7 +26,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0f1419] light:bg-white text-white light:text-gray-900 transition-colors duration-300 overflow-x-hidden">
+    <div className="min-h-screen bg-black light:bg-white text-white light:text-gray-900 transition-colors duration-300 overflow-x-hidden">
       {/* AI Chat Component */}
       <AIChat />
       
@@ -39,7 +39,7 @@ export default function Home() {
       <div className="geo-shape geo-circle w-40 h-40 top-1/2 right-1/4 opacity-20 light:opacity-5" />
       
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-[#0f1419]/80 light:bg-white/80 backdrop-blur-xl border-b border-gray-800/50 light:border-gray-200 z-50">
+      <nav className="fixed top-0 w-full bg-black/80 light:bg-white/80 backdrop-blur-xl border-b border-gray-800/50 light:border-gray-200 z-50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="text-2xl font-bold">
             <a href="/" className="text-gradient hover:opacity-80 transition">CR</a>
@@ -65,7 +65,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-6 z-10">
-            <div className="inline-block px-4 py-2 bg-[#1a1f26] light:bg-gray-100 rounded-full border border-gray-800 light:border-gray-200">
+            <div className="inline-block px-4 py-2 bg-gray-900 light:bg-gray-100 rounded-full border border-gray-800 light:border-gray-200">
               <span className="text-sm text-gray-400 light:text-gray-600">Welcome to my world</span>
             </div>
             

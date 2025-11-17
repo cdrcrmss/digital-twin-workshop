@@ -205,7 +205,7 @@ export default function ProjectsPage() {
     : projects.filter(p => p.category === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-[#0f1419] light:bg-white text-white light:text-gray-900">
+    <div className="min-h-screen bg-black light:bg-white text-white light:text-gray-900">
       <div className="container mx-auto max-w-7xl px-6 py-12">
         {/* Header */}
         <div className="mb-8">

@@ -47,8 +47,8 @@
 /* Modern Card with Shadow */
 
 .modern-card {
-    background: #1a1f26;
-    border: 1px solid #2d3541;
+    background: #111111;
+    border: 1px solid #333333;
     border-radius: 20px;
     padding: 40px;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -82,8 +82,8 @@
 /* Service Card */
 
 .service-card {
-    background: #1a1f26;
-    border: 1px solid #2d3541;
+    background: #111111;
+    border: 1px solid #333333;
     border-radius: 16px;
     padding: 32px;
     transition: all 0.3s ease;
@@ -102,7 +102,7 @@
 }
 
 .service-card.active * {
-    color: #0f1419 !important;
+    color: #000000 !important;
 }
 
 
@@ -110,7 +110,7 @@
 
 .stats-badge {
     position: absolute;
-    background: #1a1f26;
+    background: #111111;
     border: 2px solid #00d9a3;
     border-radius: 50%;
     width: 80px;
@@ -131,7 +131,7 @@
     gap: 8px;
     padding: 14px 32px;
     background: #00d9a3;
-    color: #0f1419;
+    color: #000000;
     font-weight: 600;
     border-radius: 8px;
     transition: all 0.3s ease;
@@ -189,8 +189,8 @@
 /* Project Card */
 
 .project-card {
-    background: #1a1f26;
-    border: 1px solid #2d3541;
+    background: #111111;
+    border: 1px solid #333333;
     border-radius: 16px;
     padding: 24px;
     transition: all 0.4s ease;

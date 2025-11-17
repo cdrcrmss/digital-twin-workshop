@@ -69,7 +69,7 @@ export default function AdvancedFeaturesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0f1419] light:bg-white text-white light:text-gray-900">
+    <div className="min-h-screen bg-black light:bg-white text-white light:text-gray-900">
       <div className="container mx-auto max-w-6xl px-6 py-12">
         <Link href="/" className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 mb-6">
           <ArrowLeft className="w-4 h-4" />
