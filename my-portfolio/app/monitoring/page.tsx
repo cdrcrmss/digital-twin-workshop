@@ -47,7 +47,7 @@ export default function MonitoringPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-black light:bg-white text-white light:text-black">
+    <div className="min-h-screen bg-[#0f1419] light:bg-white text-white light:text-gray-900">
       <div className="container mx-auto max-w-7xl px-6 py-12">
         <Link href="/optimization" className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 mb-6">
           <ArrowLeft className="w-4 h-4" />
@@ -208,16 +208,15 @@ export default function MonitoringPage() {
           <h2 className="text-2xl font-bold mb-4">Response Time Trend (Last 24h)</h2>
           <div className="bg-zinc-900 light:bg-zinc-100 rounded-xl p-6 border border-zinc-800 light:border-zinc-300">
             <div className="h-64 flex items-end gap-2">
-              {Array.from({ length: 24 }).map((_, idx) => {
-                const height = Math.random() * 60 + 40;
+              {[85, 92, 78, 95, 88, 82, 90, 87, 93, 89, 91, 86, 94, 88, 85, 92, 89, 91, 87, 90, 93, 88, 86, 91].map((height, idx) => {
                 return (
                   <div key={idx} className="flex-1 relative group">
                     <div
-                      className="bg-gradient-to-t from-purple-600 to-blue-500 rounded-t hover:opacity-80 transition-opacity cursor-pointer"
+                      className="bg-gradient-to-t from-[#00d9a3] to-[#00f5c4] rounded-t hover:opacity-80 transition-opacity cursor-pointer"
                       style={{ height: `${height}%` }}
                     />
-                    <div className="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 bg-black px-2 py-1 rounded text-xs opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                      {idx}:00 - {Math.floor(height * 2)}ms
+                    <div className="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 bg-black light:bg-white px-2 py-1 rounded text-xs opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-[#00d9a3]">
+                      <span className="text-white light:text-black">{idx}:00 - {Math.floor(height * 2)}ms</span>
                     </div>
                   </div>
                 );
