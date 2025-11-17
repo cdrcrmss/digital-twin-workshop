@@ -247,11 +247,24 @@
     background-clip: text;
 }
 
+
+/* Light mode text - black for readability */
+
 .light .modern-card,
 .light .service-card,
 .light .project-card {
     background: white;
     border-color: #e5e7eb;
+    color: #000000;
+}
+
+.light .modern-card p,
+.light .service-card p,
+.light .project-card p,
+.light .modern-card div,
+.light .service-card div,
+.light .project-card div {
+    color: #000000;
 }
 
 .light .stats-badge {
