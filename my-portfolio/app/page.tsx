@@ -1,32 +1,45 @@
 import { AIChat } from './components/AIChat';
 import { ThemeToggle } from './components/ThemeToggle';
 import { CVViewer } from './components/CVViewer';
-import { Github, Linkedin, Facebook, Code, Sparkles, Briefcase, GraduationCap } from 'lucide-react';
+import { Github, Linkedin, Facebook, Mail, Download, ArrowRight, Code2, Palette, Database, Sparkles, Briefcase } from 'lucide-react';
 
 export default function Home() {
   const skills = [
-    { name: 'JavaScript' },
-    { name: 'TypeScript' },
-    { name: 'React' },
-    { name: 'Next.js' },
-    { name: 'Node.js' },
-    { name: 'Tailwind CSS' },
-    { name: 'Python' },
-    { name: 'SQL' },
-    { name: 'Git' },
-    { name: 'Docker' },
+    'JavaScript', 'TypeScript', 'React', 'Next.js', 'Node.js',
+    'Tailwind CSS', 'Python', 'SQL', 'Git', 'Docker'
+  ];
+
+  const services = [
+    {
+      title: 'UI & UX Design',
+      description: 'Creating intuitive and beautiful user interfaces with modern design principles.',
+      icon: Palette,
+      active: true
+    },
+    {
+      title: 'Full Stack Development',
+      description: 'Building scalable web applications from frontend to backend.',
+      icon: Code2,
+      active: false
+    },
+    {
+      title: 'Database Design',
+      description: 'Designing efficient and scalable database architectures.',
+      icon: Database,
+      active: false
+    },
   ];
 
   const projects = [
     {
       title: 'Digital Twin RAG System',
-      description: 'AI-powered interview preparation assistant using RAG technology, Upstash Vector, and Groq LLM.',
+      description: 'AI-powered interview preparation assistant using RAG technology.',
       tech: ['Next.js', 'TypeScript', 'Upstash', 'AI/ML'],
       year: '2025'
     },
     {
       title: 'AI-Enhanced CV Website',
-      description: 'Modern, responsive portfolio website with dark mode and interactive sections.',
+      description: 'Modern, responsive portfolio website with dark mode.',
       tech: ['Next.js', 'Tailwind CSS', 'Vercel'],
       year: '2025',
       link: 'https://week2-ai-cv-website.vercel.app/'
@@ -34,96 +47,131 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-black light:bg-white text-white light:text-black transition-colors duration-300">
+    <div className="min-h-screen bg-[#0f1419] light:bg-white text-white light:text-gray-900 transition-colors duration-300 overflow-x-hidden">
       {/* AI Chat Component */}
       <AIChat />
       
       {/* Theme Toggle */}
       <ThemeToggle />
+
+      {/* Geometric Background Shapes */}
+      <div className="geo-shape geo-circle w-32 h-32 top-20 right-10 opacity-30 light:opacity-5" />
+      <div className="geo-shape geo-square w-24 h-24 bottom-40 left-10 opacity-30 light:opacity-5" />
+      <div className="geo-shape geo-circle w-40 h-40 top-1/2 right-1/4 opacity-20 light:opacity-5" />
       
       {/* Navigation */}
-      <nav className="glass fixed top-0 w-full border-b border-white/10 z-40">
+      <nav className="fixed top-0 w-full bg-[#0f1419]/80 light:bg-white/80 backdrop-blur-xl border-b border-gray-800/50 light:border-gray-200 z-50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="text-xl font-bold">
+          <div className="text-2xl font-bold">
             <a href="/" className="text-gradient hover:opacity-80 transition">CR</a>
           </div>
-          <div className="hidden lg:flex gap-6 text-sm">
-            <a href="#about" className="hover:text-purple-400 transition">About</a>
-            <a href="#skills" className="hover:text-purple-400 transition">Skills</a>
-            <a href="/projects" className="hover:text-purple-400 transition">Projects</a>
-            <a href="/advanced-features" className="hover:text-purple-400 transition">Advanced</a>
-            <a href="/optimization" className="hover:text-purple-400 transition">Optimization</a>
-            <a href="/monitoring" className="hover:text-purple-400 transition">Monitoring</a>
-            <a href="/mcp-integration" className="hover:text-purple-400 transition">MCP</a>
-            <a href="/demo" className="hover:text-purple-400 transition">Demo</a>
-            <a href="/professional" className="hover:text-purple-400 transition">Branding</a>
-            <a href="#contact" className="hover:text-purple-400 transition">Contact</a>
+          <div className="hidden lg:flex gap-8 text-sm font-medium">
+            <a href="#home" className="hover:text-[#00d9a3] transition">Home</a>
+            <a href="#about" className="hover:text-[#00d9a3] transition">About</a>
+            <a href="#services" className="hover:text-[#00d9a3] transition">Services</a>
+            <a href="#portfolio" className="hover:text-[#00d9a3] transition">Portfolio</a>
+            <a href="#contact" className="hover:text-[#00d9a3] transition">Contact</a>
           </div>
+          <a href="#contact" className="hidden lg:flex items-center gap-2 btn-primary">
+            LET'S TALK <ArrowRight className="w-4 h-4" />
+          </a>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center px-6 pt-20">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="mb-6">
-            <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 p-1">
-              <div className="w-full h-full rounded-full bg-black light:bg-white overflow-hidden">
+      <section id="home" className="relative min-h-screen flex items-center px-6 pt-20">
+        {/* Animated Blob */}
+        <div className="hero-blob" style={{ top: '20%', right: '10%' }} />
+        
+        <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
+          <div className="space-y-6 z-10">
+            <div className="inline-block px-4 py-2 bg-[#1a1f26] light:bg-gray-100 rounded-full border border-gray-800 light:border-gray-200">
+              <span className="text-sm text-gray-400 light:text-gray-600">Welcome to my world</span>
+            </div>
+            
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+              HELLO I'M A<br />
+              <span className="text-gradient">Full Stack Developer</span>
+            </h1>
+            
+            <p className="text-lg text-gray-400 light:text-gray-600 max-w-lg">
+              I'm a 20-year-old Full Stack Developer from Cauayan City, Philippines. Welcome to my portfolio world.
+            </p>
+            
+            <div className="flex flex-wrap gap-4">
+              <a href="#contact" className="btn-primary flex items-center gap-2">
+                <Mail className="w-5 h-5" /> HIRE ME
+              </a>
+              <CVViewer />
+            </div>
+          </div>
+
+          {/* Right Image with Stats */}
+          <div className="relative">
+            <div className="relative w-full max-w-md mx-auto">
+              {/* Main Photo Circle */}
+              <div className="relative w-full aspect-square rounded-full overflow-hidden border-4 border-[#00d9a3] shadow-2xl shadow-[#00d9a3]/20">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#00d9a3]/20 to-transparent" />
                 <img 
                   src="/cedric-photo.jpg" 
                   alt="Cedric Ramos"
                   className="w-full h-full object-cover"
                 />
               </div>
-            </div>
-          </div>
-          
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            Lord Cedric D. <span className="text-gradient">Ramos</span>
-          </h1>
-          
-          <p className="text-2xl md:text-3xl text-zinc-400 mb-4">
-            Full Stack Developer
-          </p>
-          
-          <p className="text-lg text-zinc-500 max-w-2xl mx-auto mb-8">
-            Passionate about building modern web applications with React, Next.js, and AI integration. 
-            Based in Cauayan City, Philippines
-          </p>
-          
-          <div className="flex gap-4 justify-center mb-8">
-            <a
-              href="https://github.com/cdrcrmss"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 bg-zinc-900 hover:bg-zinc-800 rounded-lg transition"
-            >
-              <Github className="w-6 h-6" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/cedric-ramos-548971286/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 bg-zinc-900 hover:bg-zinc-800 rounded-lg transition"
-            >
-              <Linkedin className="w-6 h-6" />
-            </a>
-            <a
-              href="https://www.facebook.com/cdrcrmss"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 bg-zinc-900 hover:bg-zinc-800 rounded-lg transition"
-            >
-              <Facebook className="w-6 h-6" />
-            </a>
-          </div>
-          
-          <CVViewer />
 
-          <div className="mt-12 p-6 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-purple-500/30 rounded-2xl hover-lift">
-            <div className="flex items-center justify-center gap-2 text-purple-400">
-              <Sparkles className="w-5 h-5 animate-pulse" />
-              <span className="text-sm font-medium">Try the AI chatbot in the bottom right corner!</span>
+              {/* Stats Badges */}
+              <div className="stats-badge" style={{ top: '10%', right: '-10px' }}>
+                <div className="text-2xl font-bold text-[#00d9a3]">16+</div>
+                <div className="text-xs text-gray-400">Projects</div>
+              </div>
+              <div className="stats-badge" style={{ bottom: '30%', left: '-10px' }}>
+                <div className="text-2xl font-bold text-[#00d9a3]">215+</div>
+                <div className="text-xs text-gray-400">Hours</div>
+              </div>
+              <div className="stats-badge" style={{ bottom: '10%', right: '10%' }}>
+                <div className="text-2xl font-bold text-[#00d9a3]">97%</div>
+                <div className="text-xs text-gray-400">Quality</div>
+              </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="py-20 px-6 bg-[#1a1f26] light:bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="section-title text-4xl md:text-5xl font-bold mb-4">
+              My <span className="text-gradient">Services</span>
+            </h2>
+            <p className="text-gray-400 light:text-gray-600 max-w-2xl mx-auto">
+              Delivering high-quality solutions tailored to your needs
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {services.map((service, index) => {
+              const Icon = service.icon;
+              return (
+                <div
+                  key={service.title}
+                  className={`service-card ${service.active ? 'active' : ''}`}
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="mb-6">
+                    <div className="w-16 h-16 rounded-lg bg-[#00d9a3]/10 flex items-center justify-center mb-4">
+                      <Icon className="w-8 h-8 text-[#00d9a3]" />
+                    </div>
+                    <h3 className="text-2xl font-bold mb-3">{service.title}</h3>
+                    <p className="text-gray-400 light:text-gray-600">{service.description}</p>
+                  </div>
+                  <div className="mt-auto">
+                    <ArrowRight className="w-6 h-6 text-[#00d9a3]" />
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -132,23 +180,23 @@ export default function Home() {
       <section id="about" className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center justify-center gap-3 mb-8">
-            <Briefcase className="w-8 h-8 text-blue-500" />
+            <Briefcase className="w-8 h-8 text-[#00d9a3]" />
             <h2 className="text-4xl font-bold text-center">
               About <span className="text-gradient">Me</span>
             </h2>
           </div>
-          <div className="card">
-            <p className="text-lg text-zinc-300 light:text-black mb-6 leading-relaxed">
+          <div className="modern-card">
+            <p className="text-lg text-gray-300 light:text-gray-700 mb-6 leading-relaxed">
               I'm a 20-year-old aspiring Full Stack Developer from Cauayan City, Philippines. 
               I'm deeply passionate about web development and continuously exploring the world of 
               modern JavaScript frameworks, frontend design, and backend technologies.
             </p>
-            <p className="text-lg text-zinc-300 light:text-black mb-6 leading-relaxed">
+            <p className="text-lg text-gray-300 light:text-gray-700 mb-6 leading-relaxed">
               I enjoy creating user-friendly and visually appealing web applications while learning 
               new tools and best practices that enhance both performance and user experience. My goal 
               is to grow as a developer who builds meaningful and impactful digital solutions.
             </p>
-            <p className="text-lg text-zinc-300 light:text-black leading-relaxed">
+            <p className="text-lg text-gray-300 light:text-gray-700 leading-relaxed">
               When I'm not coding, you can find me experimenting with new technologies, contributing 
               to projects, or enjoying outdoor adventures.
             </p>
@@ -157,25 +205,21 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 px-6 bg-zinc-950 light:bg-zinc-50">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex items-center justify-center gap-3 mb-8">
-            <Code className="w-8 h-8 text-purple-500" />
-            <h2 className="text-4xl font-bold text-center">
+      <section id="skills" className="py-20 px-6 bg-[#1a1f26] light:bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="section-title text-4xl md:text-5xl font-bold mb-4">
               Skills & <span className="text-gradient">Expertise</span>
             </h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
             {skills.map((skill, index) => (
               <div
-                key={skill.name}
-                className="card group cursor-pointer"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                key={skill}
+                className="skill-badge"
+                style={{ animationDelay: `${index * 0.05}s` }}
               >
-                <div className="h-12 w-12 mx-auto mb-3 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Code className="w-6 h-6 text-purple-400" />
-                </div>
-                <p className="font-semibold text-center text-sm">{skill.name}</p>
+                {skill}
               </div>
             ))}
           </div>
@@ -183,32 +227,32 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex items-center justify-center gap-3 mb-8">
-            <Sparkles className="w-8 h-8 text-pink-500" />
-            <h2 className="text-4xl font-bold text-center">
+      <section id="portfolio" className="py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="section-title text-4xl md:text-5xl font-bold mb-4">
               Featured <span className="text-gradient">Projects</span>
             </h2>
+            <p className="text-gray-400 light:text-gray-600 max-w-2xl mx-auto">
+              Check out some of my recent work
+            </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
-            {projects.map((project) => (
+            {projects.map((project, index) => (
               <div
                 key={project.title}
-                className="project-card group"
+                className="project-card"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex items-start justify-between mb-4">
-                  <Code className="w-8 h-8 text-purple-400" />
-                  <span className="text-sm text-zinc-500">{project.year}</span>
+                  <Code2 className="w-8 h-8 text-[#00d9a3]" />
+                  <span className="text-sm text-gray-500">{project.year}</span>
                 </div>
-                <h3 className="text-xl font-bold mb-3 group-hover:text-purple-400 transition">{project.title}</h3>
-                <p className="text-zinc-400 mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2">
+                <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
+                <p className="text-gray-400 light:text-gray-600 mb-4">{project.description}</p>
+                <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="skill-badge"
-                    >
+                    <span key={tech} className="skill-badge text-sm">
                       {tech}
                     </span>
                   ))}
@@ -218,9 +262,9 @@ export default function Home() {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-4 inline-block text-sm text-purple-400 hover:text-purple-300 transition"
+                    className="inline-flex items-center gap-2 text-[#00d9a3] hover:text-[#00f5c4] transition font-medium"
                   >
-                    View Project →
+                    View Project <ArrowRight className="w-4 h-4" />
                   </a>
                 )}
               </div>
@@ -230,96 +274,120 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-6 bg-zinc-950">
+      <section id="contact" className="py-20 px-6 bg-[#1a1f26] light:bg-gray-50">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-8">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8">
             Get In <span className="text-gradient">Touch</span>
           </h2>
-          <p className="text-lg text-zinc-400 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-400 light:text-gray-600 mb-8 max-w-2xl mx-auto">
             I'm always open to new opportunities, collaborations, and interesting projects. 
             Feel free to reach out!
           </p>
-          <div className="flex gap-4 justify-center">
-            <a
-              href="mailto:contact@cedricramos.dev"
-              className="btn-primary flex items-center gap-2"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-              Send Email
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <a href="mailto:contact@cedricramos.dev" className="btn-primary flex items-center justify-center gap-2">
+              <Mail className="w-5 h-5" /> Send Email
             </a>
+            <CVViewer />
+          </div>
+
+          <div className="flex gap-6 justify-center">
+            <a
+              href="https://github.com/cdrcrmss"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-4 bg-[#0f1419] light:bg-white rounded-lg hover:scale-110 transition-transform border border-gray-800 light:border-gray-200"
+            >
+              <Github className="w-6 h-6" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/cedric-ramos-548971286/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-4 bg-[#0f1419] light:bg-white rounded-lg hover:scale-110 transition-transform border border-gray-800 light:border-gray-200"
+            >
+              <Linkedin className="w-6 h-6" />
+            </a>
+            <a
+              href="https://www.facebook.com/cdrcrmss"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-4 bg-[#0f1419] light:bg-white rounded-lg hover:scale-110 transition-transform border border-gray-800 light:border-gray-200"
+            >
+              <Facebook className="w-6 h-6" />
+            </a>
+          </div>
+
+          <div className="mt-12 p-6 bg-[#00d9a3]/10 border border-[#00d9a3]/30 rounded-2xl">
+            <div className="flex items-center justify-center gap-2 text-[#00d9a3]">
+              <Sparkles className="w-5 h-5 animate-pulse" />
+              <span className="text-sm font-medium">Try the AI chatbot in the bottom right corner!</span>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 border-t border-zinc-800 bg-zinc-950 light:bg-zinc-50">
+      <footer className="py-12 px-6 border-t border-gray-800 light:border-gray-200 bg-[#0f1419] light:bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             {/* About Column */}
             <div>
               <h3 className="text-lg font-bold mb-4 text-gradient">Cedric Ramos</h3>
-              <p className="text-sm text-zinc-400 light:text-zinc-600 mb-4">
+              <p className="text-sm text-gray-400 light:text-gray-600 mb-4">
                 Full Stack Developer specializing in AI-powered web applications with Next.js and modern technologies.
               </p>
               <div className="flex gap-3">
-                <a href="https://github.com/cdrcrmss" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-purple-400 transition">
+                <a href="https://github.com/cdrcrmss" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#00d9a3] transition">
                   <Github className="w-5 h-5" />
                 </a>
-                <a href="https://www.linkedin.com/in/cedric-ramos-548971286/" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-purple-400 transition">
+                <a href="https://www.linkedin.com/in/cedric-ramos-548971286/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#00d9a3] transition">
                   <Linkedin className="w-5 h-5" />
                 </a>
-                <a href="https://www.facebook.com/cdrcrmss" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-purple-400 transition">
+                <a href="https://www.facebook.com/cdrcrmss" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#00d9a3] transition">
                   <Facebook className="w-5 h-5" />
                 </a>
               </div>
             </div>
 
-            {/* Week 6-7 Column */}
+            {/* Projects Column */}
             <div>
-              <h3 className="text-sm font-bold mb-4 text-purple-400">Digital Twin (Weeks 6-7)</h3>
+              <h3 className="text-sm font-bold mb-4 text-[#00d9a3]">Projects</h3>
               <ul className="space-y-2 text-sm">
-                <li><a href="/projects" className="text-zinc-400 hover:text-purple-400 transition">All Projects</a></li>
-                <li><a href="/advanced-features" className="text-zinc-400 hover:text-purple-400 transition">Advanced Features</a></li>
-                <li><a href="/optimization" className="text-zinc-400 hover:text-purple-400 transition">Optimization</a></li>
-                <li><a href="http://localhost:3000/about" target="_blank" className="text-zinc-400 hover:text-purple-400 transition">RAG Architecture</a></li>
-                <li><a href="http://localhost:3000/testing" target="_blank" className="text-zinc-400 hover:text-purple-400 transition">Testing (25+ Queries)</a></li>
+                <li><a href="/projects" className="text-gray-400 hover:text-[#00d9a3] transition">All Projects</a></li>
+                <li><a href="/advanced-features" className="text-gray-400 hover:text-[#00d9a3] transition">Advanced Features</a></li>
+                <li><a href="/optimization" className="text-gray-400 hover:text-[#00d9a3] transition">Optimization</a></li>
               </ul>
             </div>
 
-            {/* Week 8 Column */}
+            {/* Resources Column */}
             <div>
-              <h3 className="text-sm font-bold mb-4 text-blue-400">Production (Week 8)</h3>
+              <h3 className="text-sm font-bold mb-4 text-[#00d9a3]">Resources</h3>
               <ul className="space-y-2 text-sm">
-                <li><a href="/monitoring" className="text-zinc-400 hover:text-purple-400 transition">Monitoring Dashboard</a></li>
-                <li><a href="/scalability" className="text-zinc-400 hover:text-purple-400 transition">Scalability Testing</a></li>
-                <li><a href="/operations" className="text-zinc-400 hover:text-purple-400 transition">Operations Guide</a></li>
-                <li><a href="http://localhost:3000/profile-data" target="_blank" className="text-zinc-400 hover:text-purple-400 transition">Profile Data (16 Chunks)</a></li>
-                <li><a href="http://localhost:3000/github" target="_blank" className="text-zinc-400 hover:text-purple-400 transition">GitHub Repository</a></li>
+                <li><a href="/monitoring" className="text-gray-400 hover:text-[#00d9a3] transition">Monitoring</a></li>
+                <li><a href="/mcp-integration" className="text-gray-400 hover:text-[#00d9a3] transition">MCP Protocol</a></li>
+                <li><a href="/demo" className="text-gray-400 hover:text-[#00d9a3] transition">Live Demos</a></li>
               </ul>
             </div>
 
-            {/* Final Integration Column */}
+            {/* Contact Column */}
             <div>
-              <h3 className="text-sm font-bold mb-4 text-green-400">Final Integration</h3>
+              <h3 className="text-sm font-bold mb-4 text-[#00d9a3]">Contact</h3>
               <ul className="space-y-2 text-sm">
-                <li><a href="/mcp-integration" className="text-zinc-400 hover:text-purple-400 transition">MCP Protocol</a></li>
-                <li><a href="/demo" className="text-zinc-400 hover:text-purple-400 transition">Live Demos</a></li>
-                <li><a href="/professional" className="text-zinc-400 hover:text-purple-400 transition">Design System</a></li>
-                <li><a href="http://localhost:3000" target="_blank" className="text-zinc-400 hover:text-purple-400 transition">Digital Twin Chat</a></li>
-                <li><a href="/Cedric-Ramos-CV.pdf" target="_blank" className="text-zinc-400 hover:text-purple-400 transition">Download CV (PDF)</a></li>
+                <li className="text-gray-400">Cauayan City, Philippines</li>
+                <li><a href="mailto:contact@cedricramos.dev" className="text-gray-400 hover:text-[#00d9a3] transition">contact@cedricramos.dev</a></li>
+                <li><a href="/Cedric-Ramos-CV.pdf" target="_blank" className="text-gray-400 hover:text-[#00d9a3] transition">Download CV</a></li>
               </ul>
             </div>
           </div>
 
-          <div className="border-t border-zinc-800 light:border-zinc-300 pt-8 text-center">
-            <p className="text-zinc-500 text-sm mb-2">© 2025 Lord Cedric D. Ramos. Built with Next.js & ❤️</p>
-            <p className="text-zinc-600 text-xs">
-              <span className="text-purple-400">Digital Twin RAG</span> · 
-              <span className="text-blue-400"> MCP Protocol</span> · 
-              <span className="text-green-400"> Upstash Vector</span> · 
-              <span className="text-orange-400"> Groq LLM</span>
+          <div className="border-t border-gray-800 light:border-gray-200 pt-8 text-center">
+            <p className="text-gray-500 text-sm mb-2">© 2025 Lord Cedric D. Ramos. Built with Next.js & ❤️</p>
+            <p className="text-gray-600 text-xs">
+              <span className="text-[#00d9a3]">Digital Twin RAG</span> · 
+              <span className="text-[#00d9a3]"> MCP Protocol</span> · 
+              <span className="text-[#00d9a3]"> Upstash Vector</span> · 
+              <span className="text-[#00d9a3]"> Groq LLM</span>
             </p>
           </div>
         </div>
