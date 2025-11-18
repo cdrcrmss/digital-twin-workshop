@@ -14,23 +14,74 @@
 }
 
 
-/* Global theme backgrounds */
+/* ===============================================
+   GLOBAL STYLES - DARK MODE (DEFAULT)
+   =============================================== */
 
-html,
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+html {
+    background-color: #000000;
+    color-scheme: dark;
+}
+
 body {
     background-color: #000000;
-    transition: background-color 0.3s ease;
+    color: #ffffff;
 }
 
-html.light,
-body.light,
-.light html,
-.light body {
+
+/* ===============================================
+   LIGHT MODE - APPLY TO ALL ELEMENTS
+   =============================================== */
+
+html.light {
     background-color: #ffffff;
+    color-scheme: light;
+}
+
+html.light * {
+    background-color: inherit !important;
+    color: #1e293b !important;
+}
+
+html.light body {
+    background-color: #ffffff;
+    color: #1e293b;
 }
 
 
-/* Text Gradient - Dynamic Theme */
+/* Light mode text elements */
+
+html.light h1,
+html.light h2,
+html.light h3,
+html.light h4,
+html.light h5,
+html.light h6,
+html.light p,
+html.light span,
+html.light li {
+    color: #1e293b !important;
+}
+
+
+/* Light mode links */
+
+html.light a {
+    color: #6366f1 !important;
+}
+
+html.light a:hover {
+    color: #8b5cf6 !important;
+}
+
+
+/* ===============================================
+   TEXT GRADIENT
+   =============================================== */
 
 .text-gradient {
     background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
@@ -40,7 +91,9 @@ body.light,
 }
 
 
-/* Hero Section Blob */
+/* ===============================================
+   HERO BLOB
+   =============================================== */
 
 .hero-blob {
     position: absolute;
@@ -50,6 +103,10 @@ body.light,
     border-radius: 50%;
     filter: blur(60px);
     animation: float 6s ease-in-out infinite;
+}
+
+html.light .hero-blob {
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(139, 92, 246, 0.08) 50%, transparent 70%);
 }
 
 @keyframes float {
@@ -66,7 +123,9 @@ body.light,
 }
 
 
-/* Modern Card with Shadow */
+/* ===============================================
+   MODERN CARD
+   =============================================== */
 
 .modern-card {
     background: #16161f;
@@ -76,6 +135,7 @@ body.light,
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
+    color: #ffffff;
 }
 
 .modern-card::before {
@@ -100,8 +160,32 @@ body.light,
     box-shadow: 0 20px 60px rgba(99, 102, 241, 0.2);
 }
 
+html.light .modern-card {
+    background: #f8f9fa !important;
+    border-color: #e2e8f0 !important;
+    color: #1e293b !important;
+}
 
-/* Service Card */
+html.light .modern-card * {
+    background: inherit !important;
+    color: #1e293b !important;
+}
+
+html.light .modern-card p,
+html.light .modern-card span,
+html.light .modern-card div {
+    color: #475569 !important;
+}
+
+html.light .modern-card:hover {
+    border-color: #6366f1 !important;
+    box-shadow: 0 20px 60px rgba(99, 102, 241, 0.15) !important;
+}
+
+
+/* ===============================================
+   SERVICE CARD
+   =============================================== */
 
 .service-card {
     background: #16161f;
@@ -110,6 +194,7 @@ body.light,
     padding: 32px;
     transition: all 0.3s ease;
     cursor: pointer;
+    color: #ffffff;
 }
 
 .service-card:hover {
@@ -121,14 +206,44 @@ body.light,
 .service-card.active {
     background: linear-gradient(135deg, #6366f1, #8b5cf6);
     border-color: #6366f1;
+    color: #ffffff;
 }
 
-.service-card.active * {
+html.light .service-card {
+    background: #f8f9fa !important;
+    border-color: #e2e8f0 !important;
+    color: #1e293b !important;
+}
+
+html.light .service-card * {
+    background: inherit !important;
+    color: #1e293b !important;
+}
+
+html.light .service-card p,
+html.light .service-card span,
+html.light .service-card div {
+    color: #475569 !important;
+}
+
+html.light .service-card:hover {
+    background: rgba(99, 102, 241, 0.05) !important;
+    border-color: #6366f1 !important;
+}
+
+html.light .service-card.active {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6) !important;
+    color: #ffffff !important;
+}
+
+html.light .service-card.active * {
     color: #ffffff !important;
 }
 
 
-/* Stats Badge */
+/* ===============================================
+   STATS BADGE
+   =============================================== */
 
 .stats-badge {
     position: absolute;
@@ -142,10 +257,20 @@ body.light,
     align-items: center;
     justify-content: center;
     box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+    color: #6366f1;
+}
+
+html.light .stats-badge {
+    background: #f8f9fa !important;
+    border-color: #6366f1 !important;
+    color: #6366f1 !important;
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2) !important;
 }
 
 
-/* Primary Button */
+/* ===============================================
+   BUTTONS
+   =============================================== */
 
 .btn-primary {
     display: inline-flex;
@@ -166,8 +291,15 @@ body.light,
     box-shadow: 0 10px 30px rgba(99, 102, 241, 0.5);
 }
 
+html.light .btn-primary {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: #ffffff;
+}
 
-/* Outline Button */
+html.light .btn-primary:hover {
+    background: linear-gradient(135deg, #818cf8, #a78bfa);
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+}
 
 .btn-outline {
     display: inline-flex;
@@ -188,8 +320,20 @@ body.light,
     transform: translateY(-2px);
 }
 
+html.light .btn-outline {
+    color: #6366f1;
+    border-color: #6366f1;
+}
 
-/* Skill Badge */
+html.light .btn-outline:hover {
+    background: rgba(99, 102, 241, 0.08);
+    border-color: #8b5cf6;
+}
+
+
+/* ===============================================
+   SKILL BADGE
+   =============================================== */
 
 .skill-badge {
     padding: 10px 20px;
@@ -208,8 +352,21 @@ body.light,
     transform: translateY(-2px);
 }
 
+html.light .skill-badge {
+    background: rgba(99, 102, 241, 0.08);
+    border-color: rgba(99, 102, 241, 0.25);
+    color: #6366f1;
+}
 
-/* Project Card */
+html.light .skill-badge:hover {
+    background: rgba(99, 102, 241, 0.15);
+    border-color: #6366f1;
+}
+
+
+/* ===============================================
+   PROJECT CARD
+   =============================================== */
 
 .project-card {
     background: #16161f;
@@ -219,6 +376,7 @@ body.light,
     transition: all 0.4s ease;
     cursor: pointer;
     overflow: hidden;
+    color: #ffffff;
 }
 
 .project-card:hover {
@@ -227,8 +385,32 @@ body.light,
     box-shadow: 0 15px 40px rgba(99, 102, 241, 0.25);
 }
 
+html.light .project-card {
+    background: #f8f9fa !important;
+    border-color: #e2e8f0 !important;
+    color: #1e293b !important;
+}
 
-/* Section Title Underline */
+html.light .project-card * {
+    background: inherit !important;
+    color: #1e293b !important;
+}
+
+html.light .project-card p,
+html.light .project-card span,
+html.light .project-card div {
+    color: #475569 !important;
+}
+
+html.light .project-card:hover {
+    border-color: #6366f1 !important;
+    box-shadow: 0 15px 40px rgba(99, 102, 241, 0.2) !important;
+}
+
+
+/* ===============================================
+   SECTION TITLE
+   =============================================== */
 
 .section-title::after {
     content: '';
@@ -241,7 +423,9 @@ body.light,
 }
 
 
-/* Geometric Shapes */
+/* ===============================================
+   GEOMETRIC SHAPES
+   =============================================== */
 
 .geo-shape {
     position: absolute;
@@ -259,148 +443,12 @@ body.light,
     transform: rotate(45deg);
 }
 
-@import "tailwindcss";
-
-/* ===============================================
-   LIGHT MODE - Complete Theme Override
-   =============================================== */
-
-.light .text-gradient {
-    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-
-/* Light Mode Cards */
-
-.light .modern-card,
-.light .service-card,
-.light .project-card {
-    background: #ffffff;
-    border-color: #e2e8f0;
-    color: #1e293b;
-}
-
-.light .modern-card p,
-.light .service-card p,
-.light .project-card p,
-.light .modern-card div,
-.light .service-card div,
-.light .project-card div {
-    color: #475569;
-}
-
-.light .modern-card::before {
-    background: linear-gradient(90deg, #6366f1, #8b5cf6, #ec4899);
-}
-
-.light .modern-card:hover,
-.light .service-card:hover,
-.light .project-card:hover {
-    border-color: #6366f1;
-    box-shadow: 0 20px 60px rgba(99, 102, 241, 0.15);
-}
-
-
-/* Light Mode Stats Badge */
-
-.light .stats-badge {
-    background: #ffffff;
-    border-color: #6366f1;
-    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
-}
-
-.light .stats-badge .text-2xl {
-    color: #6366f1 !important;
-}
-
-
-/* Light Mode Skill Badges */
-
-.light .skill-badge {
-    background: rgba(99, 102, 241, 0.08);
-    border-color: rgba(99, 102, 241, 0.25);
-    color: #6366f1;
-}
-
-.light .skill-badge:hover {
-    background: rgba(99, 102, 241, 0.15);
-    border-color: #6366f1;
-}
-
-
-/* Light Mode Buttons */
-
-.light .btn-primary {
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
-    color: #ffffff;
-}
-
-.light .btn-primary:hover {
-    background: linear-gradient(135deg, #818cf8, #a78bfa);
-    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
-}
-
-.light .btn-outline {
-    color: #6366f1;
-    border-color: #6366f1;
-}
-
-.light .btn-outline:hover {
-    background: rgba(99, 102, 241, 0.08);
-    border-color: #8b5cf6;
-}
-
-
-/* Light Mode Service Cards */
-
-.light .service-card:hover {
-    background: rgba(99, 102, 241, 0.05);
-    border-color: #6366f1;
-}
-
-.light .service-card.active {
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
-    color: #ffffff;
-}
-
-.light .service-card.active * {
-    color: #ffffff !important;
-}
-
-
-/* Light Mode Hero Effects */
-
-.light .hero-blob {
-    background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, rgba(139, 92, 246, 0.08) 50%, transparent 70%);
-}
-
-
-/* Light Mode Geometric Shapes */
-
-.light .geo-circle {
+html.light .geo-circle {
     border-color: #6366f1;
     opacity: 0.2;
 }
 
-.light .geo-square {
+html.light .geo-square {
     border-color: #8b5cf6;
     opacity: 0.2;
-}
-
-
-/* Light Mode Section Titles */
-
-.light .section-title::after {
-    background: linear-gradient(90deg, #6366f1, #8b5cf6);
-}
-
-
-/* Light Mode Project Cards */
-
-.light .project-card:hover {
-    border-color: #6366f1;
-    box-shadow: 0 15px 40px rgba(99, 102, 241, 0.2);
 }
