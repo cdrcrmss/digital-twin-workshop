@@ -207,26 +207,26 @@ export function AIChat() {
             {messages.length === 0 ? (
               <div className="ai-chat-empty text-center py-12">
                 <MessageCircle className="w-12 h-12 mx-auto mb-4 opacity-50" />
-                <p className="ai-chat-text text-sm">Hi! I&apos;m Cedric&apos;s AI assistant.</p>
-                <p className="ai-chat-subtext text-xs mt-2">Ask me about his skills, projects, or experience!</p>
+                <p className="ai-chat-text text-sm">Hi! I'm Cedric, and this is my AI assistant.</p>
+                <p className="ai-chat-subtext text-xs mt-2">Feel free to ask me about my skills, projects, or experience!</p>
                 <div className="mt-6 space-y-2">
                   <button
-                    onClick={() => setInput("What are Cedric's technical skills?")}
+                    onClick={() => setInput("What are your main technical skills?")}
                     className="ai-chat-suggestion block w-full text-left px-4 py-2 rounded-lg text-sm transition"
                   >
-                    What are his technical skills?
+                    What are your main technical skills?
                   </button>
                   <button
-                    onClick={() => setInput("Tell me about his projects")}
+                    onClick={() => setInput("Tell me about your recent projects")}
                     className="ai-chat-suggestion block w-full text-left px-4 py-2 rounded-lg text-sm transition"
                   >
-                    Tell me about his projects
+                    Tell me about your recent projects
                   </button>
                   <button
-                    onClick={() => setInput("What makes Cedric a great developer?")}
+                    onClick={() => setInput("What makes you passionate about development?")}
                     className="ai-chat-suggestion block w-full text-left px-4 py-2 rounded-lg text-sm transition"
                   >
-                    What makes him special?
+                    What drives your passion for coding?
                   </button>
                 </div>
               </div>
