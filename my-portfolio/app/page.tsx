@@ -39,20 +39,20 @@ export default function Home() {
       <div className="geo-shape geo-circle w-40 h-40 top-1/2 right-1/4 opacity-20 light:opacity-5" />
       
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-black/80 light:bg-white/80 backdrop-blur-xl border-b border-gray-800/50 light:border-gray-200 z-50">
+      <nav className="fixed top-0 w-full bg-black/80 light:bg-white/90 backdrop-blur-xl border-b border-gray-800/50 light:border-gray-200 z-50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="text-2xl font-bold">
             <a href="/" className="text-gradient hover:opacity-80 transition">CR</a>
           </div>
-          <div className="hidden lg:flex gap-8 text-sm font-medium">
-            <a href="/projects" className="hover:text-[#00d9a3] transition">Projects</a>
-            <a href="/advanced-features" className="hover:text-[#00d9a3] transition">Advanced</a>
-            <a href="/optimization" className="hover:text-[#00d9a3] transition">Optimization</a>
-            <a href="/monitoring" className="hover:text-[#00d9a3] transition">Monitoring</a>
-            <a href="/mcp-integration" className="hover:text-[#00d9a3] transition">MCP</a>
-            <a href="/demo" className="hover:text-[#00d9a3] transition">Demo</a>
-            <a href="/professional" className="hover:text-[#00d9a3] transition">Branding</a>
-            <a href="#contact" className="hover:text-[#00d9a3] transition">Contact</a>
+          <div className="hidden lg:flex gap-8 text-sm font-medium text-white light:text-gray-700">
+            <a href="/projects" className="hover:text-[#6366f1] light:hover:text-[#6366f1] transition">Projects</a>
+            <a href="/advanced-features" className="hover:text-[#6366f1] light:hover:text-[#6366f1] transition">Advanced</a>
+            <a href="/optimization" className="hover:text-[#6366f1] light:hover:text-[#6366f1] transition">Optimization</a>
+            <a href="/monitoring" className="hover:text-[#6366f1] light:hover:text-[#6366f1] transition">Monitoring</a>
+            <a href="/mcp-integration" className="hover:text-[#6366f1] light:hover:text-[#6366f1] transition">MCP</a>
+            <a href="/demo" className="hover:text-[#6366f1] light:hover:text-[#6366f1] transition">Demo</a>
+            <a href="/professional" className="hover:text-[#6366f1] light:hover:text-[#6366f1] transition">Branding</a>
+            <a href="#contact" className="hover:text-[#6366f1] light:hover:text-[#6366f1] transition">Contact</a>
           </div>
         </div>
       </nav>
@@ -82,8 +82,8 @@ export default function Home() {
               <a href="mailto:contact@cedricramos.dev" className="btn-primary flex items-center gap-2">
                 <Mail className="w-5 h-5" /> Contact Me
               </a>
-              <a href="#portfolio" className="btn-outline flex items-center gap-2">
-                View Work <ArrowRight className="w-4 h-4" />
+              <a href="/projects" className="btn-outline flex items-center gap-2">
+                View Projects <ArrowRight className="w-4 h-4" />
               </a>
               <CVViewer />
             </div>
