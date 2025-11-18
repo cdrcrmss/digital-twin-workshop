@@ -51,6 +51,19 @@ function sanitizeInput(input: string): string {
 
 export async function POST(req: Request) {
   try {
+    // Check if required environment variables are present
+    if (!process.env.UPSTASH_VECTOR_REST_URL || !process.env.UPSTASH_VECTOR_REST_TOKEN || !process.env.GROQ_API_KEY) {
+      console.error('❌ Missing environment variables:', {
+        UPSTASH_URL: !!process.env.UPSTASH_VECTOR_REST_URL,
+        UPSTASH_TOKEN: !!process.env.UPSTASH_VECTOR_REST_TOKEN,
+        GROQ_KEY: !!process.env.GROQ_API_KEY,
+      });
+      
+      return NextResponse.json({
+        answer: "Sorry, the AI service is not properly configured. Please check the environment variables.",
+      });
+    }
+
     const body = await req.json();
     const { question } = body;
     
@@ -149,7 +162,16 @@ CONTEXT FOCUS:
     });
     
   } catch (error) {
-    console.error('Error processing chat request:', error);
+    console.error('❌ Error processing chat request:', error);
+    
+    // Log more details for debugging
+    if (error instanceof Error) {
+      console.error('Error details:', {
+        message: error.message,
+        name: error.name,
+        stack: error.stack?.split('\n')[0], // Just first line of stack
+      });
+    }
     
     // Friendly error message - don't expose internal errors
     return NextResponse.json({
