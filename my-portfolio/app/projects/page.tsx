@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, ExternalLink, Github, Calendar, Code, Zap, Database, Brain, Globe, Server, FileCode } from 'lucide-react';
+import { PageWrapper } from '../components/PageWrapper';
 
 // Project showcase page with professional icons
 interface Project {
@@ -205,8 +206,8 @@ export default function ProjectsPage() {
     : projects.filter(p => p.category === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-black light:bg-white text-white light:text-gray-900">
-      <div className="container mx-auto max-w-7xl px-6 py-12">
+    <PageWrapper>
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 py-8 sm:py-12">
         {/* Header */}
         <div className="mb-8">
           <Link href="/" className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 mb-4">
@@ -419,6 +420,6 @@ export default function ProjectsPage() {
           </div>
         )}
       </div>
-    </div>
+    </PageWrapper>
   );
 }

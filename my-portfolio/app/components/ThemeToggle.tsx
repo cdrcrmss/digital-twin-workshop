@@ -5,44 +5,38 @@ import { Sun, Moon } from 'lucide-react';
 
 export function ThemeToggle() {
   const [theme, setTheme] = useState<'light' | 'dark'>('dark');
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-    // Load theme from localStorage
+    // Load theme from localStorage on mount
     const saved = localStorage.getItem('theme') as 'light' | 'dark' | null;
     if (saved) {
       setTheme(saved);
-      if (saved === 'light') {
-        document.documentElement.classList.add('light');
-      }
+      // Apply immediately without delay
+      document.documentElement.classList.toggle('light', saved === 'light');
     }
   }, []);
 
   const toggleTheme = () => {
     const newTheme = theme === 'dark' ? 'light' : 'dark';
+    
+    // Apply class change instantly (before state update)
+    document.documentElement.classList.toggle('light', newTheme === 'light');
+    
+    // Then update state and localStorage
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
-    
-    if (newTheme === 'light') {
-      document.documentElement.classList.add('light');
-    } else {
-      document.documentElement.classList.remove('light');
-    }
   };
-
-  if (!mounted) return null;
 
   return (
     <button
       onClick={toggleTheme}
-      className="fixed top-20 right-6 z-50 p-3 rounded-full bg-zinc-800 hover:bg-zinc-700 light:bg-zinc-200 light:hover:bg-zinc-300 transition-all duration-300 shadow-lg hover:scale-110"
+      className="fixed top-20 right-6 z-50 p-3 rounded-full bg-zinc-800 hover:bg-zinc-700 dark:bg-zinc-800 light:bg-white light:border light:border-gray-300 light:hover:bg-gray-50 transition-all duration-200 shadow-lg hover:scale-110 active:scale-95"
       aria-label="Toggle theme"
     >
       {theme === 'dark' ? (
-        <Moon className="w-5 h-5 text-blue-400" />
+        <Sun className="w-5 h-5 text-yellow-400" />
       ) : (
-        <Sun className="w-5 h-5 text-yellow-500" />
+        <Moon className="w-5 h-5 text-indigo-600" />
       )}
     </button>
   );

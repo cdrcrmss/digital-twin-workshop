@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, Activity, Clock, TrendingUp, AlertCircle, CheckCircle, Database } from 'lucide-react';
+import { PageWrapper } from '../components/PageWrapper';
 
 export default function MonitoringPage() {
   const [metrics, setMetrics] = useState({
@@ -47,8 +48,8 @@ export default function MonitoringPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-black light:bg-white text-white light:text-gray-900">
-      <div className="container mx-auto max-w-7xl px-6 py-12">
+    <PageWrapper>
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 py-8 sm:py-12">
         <Link href="/optimization" className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 mb-6">
           <ArrowLeft className="w-4 h-4" />
           Back to Optimization
@@ -268,6 +269,6 @@ export default function MonitoringPage() {
           </Link>
         </div>
       </div>
-    </div>
+    </PageWrapper>
   );
 }

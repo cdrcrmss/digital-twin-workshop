@@ -9,6 +9,10 @@ interface Message {
   timestamp?: Date;
 }
 
+interface ParsedMessage extends Omit<Message, 'timestamp'> {
+  timestamp?: string;
+}
+
 export function AIChat() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
@@ -21,8 +25,8 @@ export function AIChat() {
     const saved = localStorage.getItem('ai-chat-history');
     if (saved) {
       try {
-        const parsed = JSON.parse(saved);
-        setMessages(parsed.map((msg: any) => ({
+        const parsed: ParsedMessage[] = JSON.parse(saved);
+        setMessages(parsed.map((msg) => ({
           ...msg,
           timestamp: msg.timestamp ? new Date(msg.timestamp) : undefined,
         })));
@@ -113,16 +117,18 @@ export function AIChat() {
     } catch (error) {
       console.error('Error:', error);
       
-      // Provide helpful error messages
-      let errorMessage = 'Sorry, I\'m having trouble right now. ';
+      // Provide specific, helpful error messages
+      let errorMessage = "Sorry, I'm having trouble right now.";
       
       if (error instanceof TypeError && error.message.includes('fetch')) {
-        errorMessage += 'Please check your internet connection and try again.';
+        errorMessage = "I'm having trouble connecting. Please check your internet connection and try again.";
       } else if (error instanceof Error) {
         if (error.message.includes('404') || error.message.includes('Not Found')) {
-          errorMessage += 'The AI service is currently unavailable.';
+          errorMessage = "The AI service is temporarily unavailable. Please try again in a few moments.";
+        } else if (error.message.includes('500')) {
+          errorMessage = "I'm experiencing technical difficulties. Please try again shortly.";
         } else {
-          errorMessage += 'Please try again later.';
+          errorMessage = "Something went wrong. Please try rephrasing your question.";
         }
       }
       
@@ -154,7 +160,7 @@ export function AIChat() {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 z-50 w-96 h-[600px] bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl flex flex-col overflow-hidden">
+        <div className="ai-chat-window fixed bottom-24 right-6 z-50 w-96 h-[600px] rounded-2xl shadow-2xl flex flex-col overflow-hidden">
           {/* Header */}
           <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-4 text-white">
             <div className="flex items-center justify-between mb-2">
@@ -199,26 +205,26 @@ export function AIChat() {
           {/* Messages */}
           <div className="flex-1 overflow-y-auto p-4 space-y-4">
             {messages.length === 0 ? (
-              <div className="text-center text-zinc-500 py-12">
+              <div className="ai-chat-empty text-center py-12">
                 <MessageCircle className="w-12 h-12 mx-auto mb-4 opacity-50" />
-                <p className="text-sm">Hi! I'm Cedric's AI assistant.</p>
-                <p className="text-xs mt-2">Ask me about his skills, projects, or experience!</p>
+                <p className="ai-chat-text text-sm">Hi! I&apos;m Cedric&apos;s AI assistant.</p>
+                <p className="ai-chat-subtext text-xs mt-2">Ask me about his skills, projects, or experience!</p>
                 <div className="mt-6 space-y-2">
                   <button
                     onClick={() => setInput("What are Cedric's technical skills?")}
-                    className="block w-full text-left px-4 py-2 bg-zinc-800 hover:bg-zinc-700 rounded-lg text-sm transition"
+                    className="ai-chat-suggestion block w-full text-left px-4 py-2 rounded-lg text-sm transition"
                   >
                     What are his technical skills?
                   </button>
                   <button
                     onClick={() => setInput("Tell me about his projects")}
-                    className="block w-full text-left px-4 py-2 bg-zinc-800 hover:bg-zinc-700 rounded-lg text-sm transition"
+                    className="ai-chat-suggestion block w-full text-left px-4 py-2 rounded-lg text-sm transition"
                   >
                     Tell me about his projects
                   </button>
                   <button
                     onClick={() => setInput("What makes Cedric a great developer?")}
-                    className="block w-full text-left px-4 py-2 bg-zinc-800 hover:bg-zinc-700 rounded-lg text-sm transition"
+                    className="ai-chat-suggestion block w-full text-left px-4 py-2 rounded-lg text-sm transition"
                   >
                     What makes him special?
                   </button>
@@ -230,18 +236,18 @@ export function AIChat() {
                   <div
                     className={`max-w-[85%] rounded-2xl px-4 py-2 ${
                       msg.role === 'user'
-                        ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white'
-                        : 'bg-zinc-800 text-zinc-100'
+                        ? 'ai-chat-bubble-user bg-gradient-to-r from-blue-500 to-purple-600 text-white'
+                        : 'ai-chat-bubble-assistant'
                     }`}
                   >
-                    <p className="text-sm whitespace-pre-wrap">{msg.content}</p>
+                    <div className="text-sm whitespace-pre-line leading-relaxed">{msg.content}</div>
                   </div>
                 </div>
               ))
             )}
             {isLoading && (
               <div className="flex justify-start">
-                <div className="bg-zinc-800 rounded-2xl px-4 py-3">
+                <div className="ai-chat-loading rounded-2xl px-4 py-3">
                   <Loader2 className="w-5 h-5 animate-spin text-purple-500" />
                 </div>
               </div>
@@ -250,7 +256,7 @@ export function AIChat() {
           </div>
 
           {/* Input */}
-          <form onSubmit={handleSubmit} className="p-4 bg-zinc-950 border-t border-zinc-800">
+          <form onSubmit={handleSubmit} className="ai-chat-input-form p-4">
             <div className="flex gap-2">
               <input
                 type="text"
@@ -258,7 +264,7 @@ export function AIChat() {
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask me anything..."
                 disabled={isLoading}
-                className="flex-1 bg-zinc-800 text-white px-4 py-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 disabled:opacity-50"
+                className="ai-chat-input flex-1 px-4 py-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 disabled:opacity-50"
               />
               <button
                 type="submit"

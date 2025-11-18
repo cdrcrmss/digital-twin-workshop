@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { ArrowLeft, Workflow, Code, Cpu, MessageSquare, CheckCircle, Link2 } from 'lucide-react';
+import { PageWrapper } from '../components/PageWrapper';
 
 export default function MCPIntegrationPage() {
   const mcpTools = [
@@ -140,8 +141,8 @@ console.log(data.response);`,
   };
 
   return (
-    <div className="min-h-screen bg-black light:bg-white text-white light:text-gray-900">
-      <div className="container mx-auto max-w-7xl px-6 py-12">
+    <PageWrapper>
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 py-8 sm:py-12">
         <Link href="/operations" className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 mb-6">
           <ArrowLeft className="w-4 h-4" />
           Back to Operations
@@ -396,6 +397,6 @@ console.log(data.response);`,
           </Link>
         </div>
       </div>
-    </div>
+    </PageWrapper>
   );
 }

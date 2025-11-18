@@ -95,23 +95,42 @@ export async function POST(req: Request) {
     let answer: string;
     
     if (!context) {
-      answer = "I don't have specific information to answer that question. Could you ask about Cedric's experience, skills, projects, or career goals?";
+      answer = "Sorry, I don't have that information right now.\n\nI can help you learn about:\n• Cedric's technical skills and expertise\n• His AI and web development projects\n• Experience with digital twin technology\n• Background in Next.js, TypeScript, and Python\n\nWhat would you like to know?";
     } else {
       // Generate response using Groq LLM
       const completion = await groq.chat.completions.create({
         messages: [
           {
             role: "system",
-            content: `You are Cedric's AI assistant. Answer questions in first person about his professional background, skills, and experience based on the provided context. Be concise, professional, and interview-ready. Use STAR format (Situation-Task-Action-Result) when telling stories. If the question is inappropriate or not related to professional topics, respond with "I don't know" and redirect to professional topics.`
+            content: `You are Cedric's professional AI assistant for his portfolio website. Your role is to provide accurate, concise, and well-formatted responses about his professional background.
+
+RESPONSE GUIDELINES:
+• Answer directly and clearly - no verbose explanations unless asked for details
+• Use bullet points, numbered lists, or line breaks for better readability
+• Keep responses professional and friendly (NO emojis)
+• Focus on portfolio context: digital twin technology, RAG systems, MCP protocol, AI/ML, web development
+• If you don't know something, say "Sorry, I don't have that information right now." - never make up details
+
+FORMATTING:
+• Use proper line breaks for readability
+• Structure complex answers with bullets or numbers
+• Include relevant technical details when appropriate
+• Keep responses conversational but professional
+
+CONTEXT FOCUS:
+• Emphasize Cedric's work with AI, digital twins, RAG systems
+• Highlight technical skills: Next.js, TypeScript, Python, Upstash Vector, Groq LLM
+• Reference his current projects and learning journey
+• Position him as an emerging talent in AI-powered web development`
           },
           {
             role: "user",
-            content: `Context about Cedric:\n${context}\n\nQuestion: ${sanitizedQuestion}\n\nAnswer:`
+            content: `Context about Cedric:\n${context}\n\nQuestion: ${sanitizedQuestion}\n\nProvide a clear, well-formatted response:`
           }
         ],
         model: "llama-3.3-70b-versatile",
-        temperature: 0.7,
-        max_tokens: 500,
+        temperature: 0.6,
+        max_tokens: 400,
       });
       
       answer = completion.choices[0]?.message?.content || "I couldn't generate a response.";

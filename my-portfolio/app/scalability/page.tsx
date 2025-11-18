@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { ArrowLeft, TrendingUp, Zap, Server, Database, Globe, Users } from 'lucide-react';
+import { PageWrapper } from '../components/PageWrapper';
 
 export default function ScalabilityPage() {
   const loadTests = [
@@ -73,8 +74,8 @@ export default function ScalabilityPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-black light:bg-white text-white light:text-gray-900">
-      <div className="container mx-auto max-w-7xl px-6 py-12">
+    <PageWrapper>
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 py-8 sm:py-12">
         <Link href="/monitoring" className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 mb-6">
           <ArrowLeft className="w-4 h-4" />
           Back to Monitoring
@@ -350,6 +351,6 @@ export default function ScalabilityPage() {
           </Link>
         </div>
       </div>
-    </div>
+    </PageWrapper>
   );
 }

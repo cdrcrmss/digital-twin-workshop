@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, MessageSquare, Code, Sparkles, PlayCircle, CheckCircle } from 'lucide-react';
+import { PageWrapper } from '../components/PageWrapper';
 
 export default function DemoPage() {
   const [selectedDemo, setSelectedDemo] = useState<string | null>(null);
@@ -83,8 +84,8 @@ export default function DemoPage() {
   };
 
   return (
-    <div className="min-h-screen bg-black light:bg-white text-white light:text-gray-900">
-      <div className="container mx-auto max-w-7xl px-6 py-12">
+    <PageWrapper>
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 py-8 sm:py-12">
         <Link href="/mcp-integration" className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 mb-6">
           <ArrowLeft className="w-4 h-4" />
           Back to MCP Integration
@@ -332,6 +333,6 @@ export default function DemoPage() {
           </Link>
         </div>
       </div>
-    </div>
+    </PageWrapper>
   );
 }

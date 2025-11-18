@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { AIChat } from './components/AIChat';
 import { ThemeToggle } from './components/ThemeToggle';
 import { CVViewer } from './components/CVViewer';
@@ -26,7 +27,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-black light:bg-white text-white light:text-gray-900 transition-colors duration-300 overflow-x-hidden">
+    <div className="min-h-screen bg-black text-white transition-colors duration-300 overflow-x-hidden dark:bg-black dark:text-white light:bg-white light:text-gray-900">
       {/* AI Chat Component */}
       <AIChat />
       
@@ -34,48 +35,48 @@ export default function Home() {
       <ThemeToggle />
 
       {/* Geometric Background Shapes */}
-      <div className="geo-shape geo-circle w-32 h-32 top-20 right-10 opacity-30 light:opacity-5" />
-      <div className="geo-shape geo-square w-24 h-24 bottom-40 left-10 opacity-30 light:opacity-5" />
-      <div className="geo-shape geo-circle w-40 h-40 top-1/2 right-1/4 opacity-20 light:opacity-5" />
+      <div className="geo-shape geo-circle w-32 h-32 top-20 right-10 dark:opacity-30 light:opacity-5" />
+      <div className="geo-shape geo-square w-24 h-24 bottom-40 left-10 dark:opacity-30 light:opacity-5" />
+      <div className="geo-shape geo-circle w-40 h-40 top-1/2 right-1/4 dark:opacity-20 light:opacity-5" />
       
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-black/80 light:bg-white/90 backdrop-blur-xl border-b border-gray-800/50 light:border-gray-200 z-50">
+      <nav className="fixed top-0 w-full bg-black/80 backdrop-blur-xl border-b border-gray-800/50 z-50 dark:bg-black/80 dark:border-gray-800/50 light:bg-white/95 light:border-gray-200">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="text-2xl font-bold">
-            <a href="/" className="text-gradient hover:opacity-80 transition">CR</a>
+            <Link href="/" className="text-gradient hover:opacity-80 transition-opacity duration-200">CR</Link>
           </div>
-          <div className="hidden lg:flex gap-8 text-sm font-medium text-white light:text-gray-700">
-            <a href="/projects" className="hover:text-[#6366f1] light:hover:text-[#6366f1] transition">Projects</a>
-            <a href="/advanced-features" className="hover:text-[#6366f1] light:hover:text-[#6366f1] transition">Advanced</a>
-            <a href="/optimization" className="hover:text-[#6366f1] light:hover:text-[#6366f1] transition">Optimization</a>
-            <a href="/monitoring" className="hover:text-[#6366f1] light:hover:text-[#6366f1] transition">Monitoring</a>
-            <a href="/mcp-integration" className="hover:text-[#6366f1] light:hover:text-[#6366f1] transition">MCP</a>
-            <a href="/demo" className="hover:text-[#6366f1] light:hover:text-[#6366f1] transition">Demo</a>
-            <a href="/professional" className="hover:text-[#6366f1] light:hover:text-[#6366f1] transition">Branding</a>
-            <a href="#contact" className="hover:text-[#6366f1] light:hover:text-[#6366f1] transition">Contact</a>
+          <div className="hidden lg:flex gap-8 text-sm font-medium dark:text-white light:text-gray-700">
+            <a href="/projects" className="hover:text-[#6366f1] transition-colors duration-200">Projects</a>
+            <a href="/advanced-features" className="hover:text-[#6366f1] transition-colors duration-200">Advanced</a>
+            <a href="/optimization" className="hover:text-[#6366f1] transition-colors duration-200">Optimization</a>
+            <a href="/monitoring" className="hover:text-[#6366f1] transition-colors duration-200">Monitoring</a>
+            <a href="/mcp-integration" className="hover:text-[#6366f1] transition-colors duration-200">MCP</a>
+            <a href="/demo" className="hover:text-[#6366f1] transition-colors duration-200">Demo</a>
+            <a href="/professional" className="hover:text-[#6366f1] transition-colors duration-200">Branding</a>
+            <a href="#contact" className="hover:text-[#6366f1] transition-colors duration-200">Contact</a>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex items-center px-6 pt-20">
-        {/* Animated Blob */}
-        <div className="hero-blob" style={{ top: '20%', right: '10%' }} />
+        {/* Animated Blob - Hidden in Light Mode */}
+        <div className="hero-blob dark:block light:hidden" style={{ top: '20%', right: '10%' }} />
         
         <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-6 z-10">
-            <div className="inline-block px-4 py-2 bg-gray-900 light:bg-gray-100 rounded-full border border-gray-800 light:border-gray-200">
-              <span className="text-sm text-gray-400 light:text-gray-600">Welcome to my world</span>
+            <div className="inline-block px-4 py-2 bg-gray-900 dark:bg-gray-900 light:bg-gray-100 rounded-full border border-gray-800 dark:border-gray-800 light:border-gray-200">
+              <span className="text-sm text-gray-400 dark:text-gray-400 light:text-gray-600">Welcome to my world</span>
             </div>
             
             <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-              HELLO I'M<br />
+              HELLO I&apos;M<br />
               <span className="text-gradient">Cedric Ramos</span>
             </h1>
             
-            <p className="text-lg text-gray-400 light:text-gray-600 max-w-lg">
-              I'm a 20-year-old Full Stack Developer from Cauayan City, Philippines. Welcome to my portfolio world.
+            <p className="text-lg text-gray-400 dark:text-gray-400 light:text-gray-600 max-w-lg">
+              I&apos;m a 20-year-old Full Stack Developer from Cauayan City, Philippines. Welcome to my portfolio world.
             </p>
             
             <div className="flex flex-wrap gap-4">
@@ -91,29 +92,29 @@ export default function Home() {
 
           {/* Right Image with Stats */}
           <div className="relative">
-            <div className="relative w-full max-w-md mx-auto">
+            <div className="relative w-full max-w-md mx-auto profile-image-container">
               {/* Main Photo Circle */}
-              <div className="relative w-full aspect-square rounded-full overflow-hidden border-4 border-[#00d9a3] shadow-2xl shadow-[#00d9a3]/20">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#00d9a3]/20 to-transparent" />
+              <div className="relative w-full aspect-square rounded-full overflow-hidden border-4 border-[#00d9a3] dark:border-[#00d9a3] light:border-[#6366f1] shadow-2xl shadow-[#00d9a3]/20 light:shadow-[#6366f1]/20">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#00d9a3]/20 to-transparent dark:block light:hidden" />
                 <img 
                   src="/cedric-photo.jpg" 
                   alt="Cedric Ramos"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover relative z-10"
                 />
               </div>
 
-              {/* Stats Badges */}
-              <div className="stats-badge" style={{ top: '10%', right: '-10px' }}>
-                <div className="text-2xl font-bold text-[#00d9a3]">2</div>
-                <div className="text-xs text-gray-400">Projects</div>
+              {/* Stats Badges - Using CSS Classes for Perfect Positioning */}
+              <div className="stats-badge stats-badge-top-right">
+                <div className="text-2xl font-bold text-[#00d9a3] dark:text-[#00d9a3] light:text-[#6366f1]">2</div>
+                <div className="text-xs text-gray-400 dark:text-gray-400 light:text-gray-600">Projects</div>
               </div>
-              <div className="stats-badge" style={{ bottom: '30%', left: '-10px' }}>
-                <div className="text-2xl font-bold text-[#00d9a3]">215+</div>
-                <div className="text-xs text-gray-400">Hours</div>
+              <div className="stats-badge stats-badge-bottom-left">
+                <div className="text-2xl font-bold text-[#00d9a3] dark:text-[#00d9a3] light:text-[#6366f1]">215+</div>
+                <div className="text-xs text-gray-400 dark:text-gray-400 light:text-gray-600">Hours</div>
               </div>
-              <div className="stats-badge" style={{ bottom: '10%', right: '10%' }}>
-                <div className="text-2xl font-bold text-[#00d9a3]">97%</div>
-                <div className="text-xs text-gray-400">Quality</div>
+              <div className="stats-badge stats-badge-bottom-right">
+                <div className="text-2xl font-bold text-[#00d9a3] dark:text-[#00d9a3] light:text-[#6366f1]">97%</div>
+                <div className="text-xs text-gray-400 dark:text-gray-400 light:text-gray-600">Quality</div>
               </div>
             </div>
           </div>
@@ -131,13 +132,13 @@ export default function Home() {
           </div>
           <div className="modern-card">
             <p className="text-lg text-gray-300 light:text-gray-700 mb-6 leading-relaxed">
-              I'm a 20-year-old aspiring Full Stack Developer from Cauayan City, Philippines. 
+              I&apos;m a 20-year-old aspiring Full Stack Developer from Cauayan City, Philippines. 
               I'm deeply passionate about web development and continuously exploring the world of 
               modern JavaScript frameworks, frontend design, and backend technologies.
             </p>
             <p className="text-lg text-gray-300 light:text-gray-700 mb-6 leading-relaxed">
-              I enjoy creating user-friendly and visually appealing web applications while learning 
-              new tools and best practices that enhance both performance and user experience. My goal 
+              I enjoy creating user-friendly and visually appealing web applications while learning
+              new tools and best practices that enhance both performance and user experience. My goal
               is to grow as a developer who builds meaningful and impactful digital solutions.
             </p>
             <p className="text-lg text-gray-300 light:text-gray-700 leading-relaxed">
@@ -262,8 +263,8 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="mt-12 p-6 bg-[#00d9a3]/10 border border-[#00d9a3]/30 rounded-2xl">
-            <div className="flex items-center justify-center gap-2 text-[#00d9a3]">
+          <div className="mt-12 p-6 bg-[#00d9a3]/10 dark:bg-[#00d9a3]/10 light:bg-[#6366f1]/10 border border-[#00d9a3]/30 dark:border-[#00d9a3]/30 light:border-[#6366f1]/30 rounded-2xl">
+            <div className="flex items-center justify-center gap-2 text-[#00d9a3] dark:text-[#00d9a3] light:text-[#6366f1]">
               <Sparkles className="w-5 h-5 animate-pulse" />
               <span className="text-sm font-medium">Try the AI chatbot in the bottom right corner!</span>
             </div>
@@ -296,42 +297,42 @@ export default function Home() {
 
             {/* Projects Column */}
             <div>
-              <h3 className="text-sm font-bold mb-4 text-[#00d9a3]">Projects</h3>
+              <h3 className="text-sm font-bold mb-4 text-[#00d9a3] dark:text-[#00d9a3] light:text-[#6366f1]">Projects</h3>
               <ul className="space-y-2 text-sm">
-                <li><a href="/projects" className="text-gray-400 hover:text-[#00d9a3] transition">All Projects</a></li>
-                <li><a href="/advanced-features" className="text-gray-400 hover:text-[#00d9a3] transition">Advanced Features</a></li>
-                <li><a href="/optimization" className="text-gray-400 hover:text-[#00d9a3] transition">Optimization</a></li>
+                <li><a href="/projects" className="text-gray-400 dark:text-gray-400 light:text-gray-600 hover:text-[#00d9a3] dark:hover:text-[#00d9a3] light:hover:text-[#6366f1] transition">All Projects</a></li>
+                <li><a href="/advanced-features" className="text-gray-400 dark:text-gray-400 light:text-gray-600 hover:text-[#00d9a3] dark:hover:text-[#00d9a3] light:hover:text-[#6366f1] transition">Advanced Features</a></li>
+                <li><a href="/optimization" className="text-gray-400 dark:text-gray-400 light:text-gray-600 hover:text-[#00d9a3] dark:hover:text-[#00d9a3] light:hover:text-[#6366f1] transition">Optimization</a></li>
               </ul>
             </div>
 
             {/* Resources Column */}
             <div>
-              <h3 className="text-sm font-bold mb-4 text-[#00d9a3]">Resources</h3>
+              <h3 className="text-sm font-bold mb-4 text-[#00d9a3] dark:text-[#00d9a3] light:text-[#6366f1]">Resources</h3>
               <ul className="space-y-2 text-sm">
-                <li><a href="/monitoring" className="text-gray-400 hover:text-[#00d9a3] transition">Monitoring</a></li>
-                <li><a href="/mcp-integration" className="text-gray-400 hover:text-[#00d9a3] transition">MCP Protocol</a></li>
-                <li><a href="/demo" className="text-gray-400 hover:text-[#00d9a3] transition">Live Demos</a></li>
+                <li><a href="/monitoring" className="text-gray-400 dark:text-gray-400 light:text-gray-600 hover:text-[#00d9a3] dark:hover:text-[#00d9a3] light:hover:text-[#6366f1] transition">Monitoring</a></li>
+                <li><a href="/mcp-integration" className="text-gray-400 dark:text-gray-400 light:text-gray-600 hover:text-[#00d9a3] dark:hover:text-[#00d9a3] light:hover:text-[#6366f1] transition">MCP Protocol</a></li>
+                <li><a href="/demo" className="text-gray-400 dark:text-gray-400 light:text-gray-600 hover:text-[#00d9a3] dark:hover:text-[#00d9a3] light:hover:text-[#6366f1] transition">Live Demos</a></li>
               </ul>
             </div>
 
             {/* Contact Column */}
             <div>
-              <h3 className="text-sm font-bold mb-4 text-[#00d9a3]">Contact</h3>
+              <h3 className="text-sm font-bold mb-4 text-[#00d9a3] dark:text-[#00d9a3] light:text-[#6366f1]">Contact</h3>
               <ul className="space-y-2 text-sm">
-                <li className="text-gray-400">Cauayan City, Philippines</li>
-                <li><a href="mailto:contact@cedricramos.dev" className="text-gray-400 hover:text-[#00d9a3] transition">contact@cedricramos.dev</a></li>
-                <li><a href="/Cedric-Ramos-CV.pdf" target="_blank" className="text-gray-400 hover:text-[#00d9a3] transition">Download CV</a></li>
+                <li className="text-gray-400 dark:text-gray-400 light:text-gray-600">Cauayan City, Philippines</li>
+                <li><a href="mailto:contact@cedricramos.dev" className="text-gray-400 dark:text-gray-400 light:text-gray-600 hover:text-[#00d9a3] dark:hover:text-[#00d9a3] light:hover:text-[#6366f1] transition">contact@cedricramos.dev</a></li>
+                <li><a href="/Cedric-Ramos-CV.pdf" target="_blank" className="text-gray-400 dark:text-gray-400 light:text-gray-600 hover:text-[#00d9a3] dark:hover:text-[#00d9a3] light:hover:text-[#6366f1] transition">Download CV</a></li>
               </ul>
             </div>
           </div>
 
           <div className="border-t border-gray-800 light:border-gray-200 pt-8 text-center">
-            <p className="text-gray-500 text-sm mb-2">© 2025 Lord Cedric D. Ramos. Built with Next.js & ❤️</p>
-            <p className="text-gray-600 text-xs">
-              <span className="text-[#00d9a3]">Digital Twin RAG</span> · 
-              <span className="text-[#00d9a3]"> MCP Protocol</span> · 
-              <span className="text-[#00d9a3]"> Upstash Vector</span> · 
-              <span className="text-[#00d9a3]"> Groq LLM</span>
+            <p className="text-gray-500 dark:text-gray-500 light:text-gray-600 text-sm mb-2">© 2025 Lord Cedric D. Ramos. Built with Next.js</p>
+            <p className="text-gray-600 dark:text-gray-600 light:text-gray-500 text-xs">
+              <span className="text-[#00d9a3] dark:text-[#00d9a3] light:text-[#6366f1]">Digital Twin RAG</span> · 
+              <span className="text-[#00d9a3] dark:text-[#00d9a3] light:text-[#6366f1]"> MCP Protocol</span> · 
+              <span className="text-[#00d9a3] dark:text-[#00d9a3] light:text-[#6366f1]"> Upstash Vector</span> · 
+              <span className="text-[#00d9a3] dark:text-[#00d9a3] light:text-[#6366f1]"> Groq LLM</span>
             </p>
           </div>
         </div>

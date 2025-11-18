@@ -1,4 +1,5 @@
-﻿@import "tailwindcss";
+﻿@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
 @theme {
     /* Modern Blue-Purple Palette */
     --color-primary: #6366f1;
@@ -15,67 +16,192 @@
 
 
 /* ===============================================
+   FONT FAMILIES
+   =============================================== */
+
+html {
+    font-family: 'Geist', 'Inter', system-ui, -apple-system, sans-serif;
+    --font-heading: 'Poppins', 'Geist', system-ui;
+    --font-body: 'Inter', 'Geist', system-ui;
+    --font-mono: 'Geist Mono', 'Courier New', monospace;
+}
+
+
+/* ===============================================
    GLOBAL STYLES - DARK MODE (DEFAULT)
    =============================================== */
 
+
+/* Only transition colors, NOT display/visibility/opacity to prevent flicker */
+
 * {
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1), transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/* Prevent transitions on elements that should instantly hide */
+
+.hero-blob,
+.bg-gradient-to-br,
+.absolute.inset-0,
+[class*="gradient"] {
+    transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    /* NO opacity, visibility, or display transitions */
 }
 
 html {
     background-color: #000000;
     color-scheme: dark;
+    font-family: var(--font-body);
 }
 
 body {
     background-color: #000000;
     color: #ffffff;
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    font-size: 3.75rem;
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+h3 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+h5 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+p {
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 1.7;
+}
+
+span {
+    font-family: var(--font-body);
+}
+
+code,
+pre {
+    font-family: var(--font-mono);
+}
+
+button {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+a {
+    font-family: inherit;
+    font-weight: 500;
 }
 
 
 /* ===============================================
-   LIGHT MODE - APPLY TO ALL ELEMENTS
+   LIGHT MODE - STRATEGIC OVERRIDES ONLY
    =============================================== */
 
 html.light {
     background-color: #ffffff;
     color-scheme: light;
-}
-
-html.light * {
-    background-color: inherit !important;
-    color: #1e293b !important;
+    font-family: var(--font-body);
 }
 
 html.light body {
     background-color: #ffffff;
     color: #1e293b;
+    font-family: var(--font-body);
 }
 
 
-/* Light mode text elements */
+/* Only target specific structural elements for white backgrounds */
+
+html.light main,
+html.light section,
+html.light article,
+html.light aside {
+    background-color: #ffffff;
+}
+
+
+/* Light mode text - REMOVE div/span background overrides */
 
 html.light h1,
 html.light h2,
 html.light h3,
 html.light h4,
 html.light h5,
-html.light h6,
-html.light p,
-html.light span,
+html.light h6 {
+    color: #0f172a;
+}
+
+html.light p {
+    color: #1e293b;
+}
+
+html.light span:not(.text-gradient):not([class*="badge"]):not([class*="btn"]) {
+    color: inherit;
+    /* Inherit from parent, don't force */
+}
+
 html.light li {
-    color: #1e293b !important;
+    color: #1e293b;
+}
+
+html.light label {
+    color: #1e293b;
 }
 
 
 /* Light mode links */
 
-html.light a {
-    color: #6366f1 !important;
+html.light a:not(.btn-primary):not(.btn-outline):not(.text-gradient) {
+    color: #6366f1;
 }
 
-html.light a:hover {
-    color: #8b5cf6 !important;
+html.light a:not(.btn-primary):not(.btn-outline):not(.text-gradient):hover {
+    color: #8b5cf6;
 }
 
 
@@ -103,10 +229,15 @@ html.light a:hover {
     border-radius: 50%;
     filter: blur(60px);
     animation: float 6s ease-in-out infinite;
+    /* NO transitions - instant hide/show */
 }
 
+
+/* In light mode: hide instantly via display:none in JSX with light:hidden class */
+
 html.light .hero-blob {
-    background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(139, 92, 246, 0.08) 50%, transparent 70%);
+    display: none !important;
+    /* Force instant hide, no fade */
 }
 
 @keyframes float {
@@ -132,7 +263,7 @@ html.light .hero-blob {
     border: 1px solid #27273a;
     border-radius: 20px;
     padding: 40px;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
     color: #ffffff;
@@ -160,26 +291,26 @@ html.light .hero-blob {
     box-shadow: 0 20px 60px rgba(99, 102, 241, 0.2);
 }
 
+
+/* Light mode: clean override without forcing child backgrounds */
+
 html.light .modern-card {
-    background: #f8f9fa !important;
-    border-color: #e2e8f0 !important;
-    color: #1e293b !important;
+    background: #ffffff;
+    border-color: #d1d5db;
+    color: #1e293b;
 }
 
-html.light .modern-card * {
-    background: inherit !important;
-    color: #1e293b !important;
+html.light .modern-card h1,
+html.light .modern-card h2,
+html.light .modern-card h3,
+html.light .modern-card h4,
+html.light .modern-card h5,
+html.light .modern-card h6 {
+    color: #0f172a;
 }
 
-html.light .modern-card p,
-html.light .modern-card span,
-html.light .modern-card div {
-    color: #475569 !important;
-}
-
-html.light .modern-card:hover {
-    border-color: #6366f1 !important;
-    box-shadow: 0 20px 60px rgba(99, 102, 241, 0.15) !important;
+html.light .modern-card p {
+    color: #374151;
 }
 
 
@@ -192,7 +323,7 @@ html.light .modern-card:hover {
     border: 1px solid #27273a;
     border-radius: 16px;
     padding: 32px;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
     color: #ffffff;
 }
@@ -209,34 +340,53 @@ html.light .modern-card:hover {
     color: #ffffff;
 }
 
+
+/* Light mode: clean overrides */
+
 html.light .service-card {
-    background: #f8f9fa !important;
-    border-color: #e2e8f0 !important;
-    color: #1e293b !important;
+    background: #ffffff;
+    border-color: #d1d5db;
+    color: #1e293b;
 }
 
-html.light .service-card * {
-    background: inherit !important;
-    color: #1e293b !important;
+html.light .service-card h1,
+html.light .service-card h2,
+html.light .service-card h3,
+html.light .service-card h4,
+html.light .service-card h5,
+html.light .service-card h6 {
+    color: #0f172a;
 }
 
-html.light .service-card p,
-html.light .service-card span,
-html.light .service-card div {
-    color: #475569 !important;
+html.light .service-card p {
+    color: #374151;
 }
 
 html.light .service-card:hover {
-    background: rgba(99, 102, 241, 0.05) !important;
-    border-color: #6366f1 !important;
+    background: rgba(99, 102, 241, 0.08);
+    border-color: #6366f1;
+}
+
+html.light .service-card.active {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: #ffffff;
+}
+
+html.light .service-card.active h1,
+html.light .service-card.active h2,
+html.light .service-card.active h3,
+html.light .service-card.active h4,
+html.light .service-card.active h5,
+html.light .service-card.active h6,
+html.light .service-card.active p {
+    color: #ffffff;
 }
 
 html.light .service-card.active {
     background: linear-gradient(135deg, #6366f1, #8b5cf6) !important;
-    color: #ffffff !important;
 }
 
-html.light .service-card.active * {
+html.light .service-card.active *:not(.text-gradient) {
     color: #ffffff !important;
 }
 
@@ -247,24 +397,61 @@ html.light .service-card.active * {
 
 .stats-badge {
     position: absolute;
-    background: #16161f;
-    border: 2px solid #6366f1;
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
-    color: #6366f1;
+    background: linear-gradient(135deg, #6366f1, #00d9a3);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 20px 50px rgba(0, 217, 163, 0.3);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    z-index: 20;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.stats-badge:hover {
+    transform: translateY(-5px);
+}
+
+.stats-badge div {
+    color: inherit;
+}
+
+
+/* Specific Badge Positions */
+
+.stats-badge-top-right {
+    top: 10%;
+    right: -10px;
+}
+
+.stats-badge-bottom-left {
+    bottom: 30%;
+    left: -10px;
+}
+
+.stats-badge-bottom-right {
+    bottom: 10%;
+    right: 10%;
+}
+
+
+/* Profile Image Container */
+
+.profile-image-container {
+    position: relative;
+}
+
+
+/* Light Mode Stats Badge */
+
 html.light .stats-badge {
-    background: #f8f9fa !important;
-    border-color: #6366f1 !important;
-    color: #6366f1 !important;
-    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2) !important;
+    background: linear-gradient(135deg, #6366f1, #00d9a3) !important;
+    color: white !important;
+    box-shadow: 0 20px 50px rgba(99, 102, 241, 0.3) !important;
+}
+
+html.light .stats-badge div {
+    color: white !important;
 }
 
 
@@ -277,27 +464,35 @@ html.light .stats-badge {
     align-items: center;
     gap: 8px;
     padding: 14px 32px;
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
-    color: #ffffff;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6) !important;
+    color: #ffffff !important;
     font-weight: 600;
     border-radius: 8px;
     transition: all 0.3s ease;
     border: none;
 }
 
+.btn-primary * {
+    color: #ffffff !important;
+}
+
 .btn-primary:hover {
-    background: linear-gradient(135deg, #818cf8, #a78bfa);
+    background: linear-gradient(135deg, #818cf8, #a78bfa) !important;
     transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba(99, 102, 241, 0.5);
 }
 
 html.light .btn-primary {
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
-    color: #ffffff;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6) !important;
+    color: #ffffff !important;
+}
+
+html.light .btn-primary * {
+    color: #ffffff !important;
 }
 
 html.light .btn-primary:hover {
-    background: linear-gradient(135deg, #818cf8, #a78bfa);
+    background: linear-gradient(135deg, #818cf8, #a78bfa) !important;
     box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
 }
 
@@ -306,28 +501,37 @@ html.light .btn-primary:hover {
     align-items: center;
     gap: 8px;
     padding: 14px 32px;
-    background: transparent;
-    color: #6366f1;
+    background: transparent !important;
+    color: #6366f1 !important;
     font-weight: 600;
-    border: 2px solid #6366f1;
+    border: 2px solid #6366f1 !important;
     border-radius: 8px;
     transition: all 0.3s ease;
 }
 
+.btn-outline * {
+    color: #6366f1 !important;
+}
+
 .btn-outline:hover {
-    background: rgba(99, 102, 241, 0.1);
-    border-color: #8b5cf6;
+    background: rgba(99, 102, 241, 0.1) !important;
+    border-color: #8b5cf6 !important;
     transform: translateY(-2px);
 }
 
 html.light .btn-outline {
-    color: #6366f1;
-    border-color: #6366f1;
+    background: transparent !important;
+    color: #6366f1 !important;
+    border-color: #6366f1 !important;
+}
+
+html.light .btn-outline * {
+    color: #6366f1 !important;
 }
 
 html.light .btn-outline:hover {
-    background: rgba(99, 102, 241, 0.08);
-    border-color: #8b5cf6;
+    background: rgba(99, 102, 241, 0.12) !important;
+    border-color: #8b5cf6 !important;
 }
 
 
@@ -373,7 +577,7 @@ html.light .skill-badge:hover {
     border: 1px solid #27273a;
     border-radius: 16px;
     padding: 24px;
-    transition: all 0.4s ease;
+    transition: transform 0.4s ease, background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
     cursor: pointer;
     overflow: hidden;
     color: #ffffff;
@@ -385,26 +589,31 @@ html.light .skill-badge:hover {
     box-shadow: 0 15px 40px rgba(99, 102, 241, 0.25);
 }
 
+
+/* Light mode: clean overrides */
+
 html.light .project-card {
-    background: #f8f9fa !important;
-    border-color: #e2e8f0 !important;
-    color: #1e293b !important;
+    background: #ffffff;
+    border-color: #d1d5db;
+    color: #1e293b;
 }
 
-html.light .project-card * {
-    background: inherit !important;
-    color: #1e293b !important;
+html.light .project-card h1,
+html.light .project-card h2,
+html.light .project-card h3,
+html.light .project-card h4,
+html.light .project-card h5,
+html.light .project-card h6 {
+    color: #0f172a;
 }
 
-html.light .project-card p,
-html.light .project-card span,
-html.light .project-card div {
-    color: #475569 !important;
+html.light .project-card p {
+    color: #374151;
 }
 
 html.light .project-card:hover {
-    border-color: #6366f1 !important;
-    box-shadow: 0 15px 40px rgba(99, 102, 241, 0.2) !important;
+    border-color: #6366f1;
+    box-shadow: 0 15px 40px rgba(99, 102, 241, 0.2);
 }
 
 
@@ -451,4 +660,348 @@ html.light .geo-circle {
 html.light .geo-square {
     border-color: #8b5cf6;
     opacity: 0.2;
+}
+
+
+/* ===============================================
+   IMAGE & MEDIA VISIBILITY
+   =============================================== */
+
+img {
+    opacity: 1;
+    visibility: visible;
+}
+
+html.light img {
+    opacity: 1;
+    visibility: visible;
+    filter: none;
+}
+
+
+/* Image container backgrounds */
+
+.aspect-square,
+.rounded-full {
+    background-color: transparent;
+    /* Don't force backgrounds */
+}
+
+
+/* CRITICAL FIX: Gradient overlays must hide INSTANTLY in light mode */
+
+html.light .bg-gradient-to-br,
+html.light .absolute.inset-0.bg-gradient-to-br {
+    display: none !important;
+    /* Instant hide, no transition */
+}
+
+
+/* Dark mode overlays should NOT transition opacity/visibility */
+
+.bg-gradient-to-br {
+    transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    /* NO opacity, visibility, or display transitions */
+}
+
+
+/* Ensure SVGs and icons are visible */
+
+svg,
+html.light svg {
+    opacity: 1;
+}
+
+
+/* ===============================================
+   ENHANCED TEXT VISIBILITY
+   =============================================== */
+
+
+/* Ensure headings are always visible */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    opacity: 1;
+}
+
+
+/* Ensure paragraph text is readable */
+
+p {
+    opacity: 1;
+}
+
+
+/* Light mode text utility class overrides */
+
+html.light .text-gray-400 {
+    color: #6b7280;
+}
+
+html.light .text-gray-300 {
+    color: #475569;
+}
+
+html.light .text-white {
+    color: #1e293b;
+}
+
+html.light .text-zinc-400 {
+    color: #71717a;
+}
+
+html.light .text-zinc-300 {
+    color: #52525b;
+}
+
+
+/* ===============================================
+   LIGHT MODE NAVIGATION & PAGES
+   =============================================== */
+
+
+/* Navigation bar light mode */
+
+html.light nav {
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid #e5e7eb;
+}
+
+
+/* Table elements in light mode */
+
+html.light table,
+html.light thead,
+html.light tbody,
+html.light tr,
+html.light th,
+html.light td {
+    background-color: #ffffff;
+    color: #1e293b;
+}
+
+html.light th {
+    color: #0f172a;
+    font-weight: 600;
+}
+
+
+/* Override Tailwind dark background utilities in light mode */
+
+html.light .bg-zinc-900,
+html.light .bg-zinc-800,
+html.light .bg-gray-900,
+html.light .bg-gray-800,
+html.light .bg-black {
+    background-color: #ffffff;
+}
+
+
+/* Small decorative elements */
+
+html.light .bg-zinc-800 {
+    background-color: rgba(99, 102, 241, 0.1);
+}
+
+
+/* Text color overrides for utility classes */
+
+html.light .text-zinc-400,
+html.light .text-zinc-300,
+html.light .text-gray-400,
+html.light .text-gray-300 {
+    color: #4b5563;
+}
+
+
+/* ===============================================
+   FOOTER THEME FIXES
+   =============================================== */
+
+
+/* Footer background synchronization */
+
+footer {
+    background: #0f1419 !important;
+    border-top: 1px solid #27273a;
+    transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html.light footer {
+    background: #ffffff !important;
+    border-top: 1px solid #e5e7eb;
+}
+
+
+/* Footer text visibility fixes */
+
+footer h3,
+footer p,
+footer li,
+footer a {
+    color: #9ca3af;
+    transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html.light footer h3,
+html.light footer p,
+html.light footer li,
+html.light footer a {
+    color: #6b7280;
+}
+
+
+/* Footer accent colors */
+
+footer .text-gradient,
+footer .text-\[\#00d9a3\] {
+    background: linear-gradient(135deg, #00d9a3 0%, #6366f1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+html.light footer .text-gradient,
+html.light footer .text-\[\#00d9a3\] {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+
+/* ===============================================
+   AI CHAT THEME INTEGRATION
+   =============================================== */
+
+
+/* Chat Window Container */
+
+.ai-chat-window {
+    background: #1f2937;
+    border: 1px solid #374151;
+    transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html.light .ai-chat-window {
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+}
+
+
+/* Empty State */
+
+.ai-chat-empty {
+    color: #6b7280;
+}
+
+html.light .ai-chat-empty {
+    color: #6b7280;
+}
+
+.ai-chat-text {
+    color: #9ca3af;
+}
+
+html.light .ai-chat-text {
+    color: #4b5563;
+}
+
+.ai-chat-subtext {
+    color: #6b7280;
+}
+
+html.light .ai-chat-subtext {
+    color: #6b7280;
+}
+
+
+/* Suggestion Buttons */
+
+.ai-chat-suggestion {
+    background: #374151;
+    color: #d1d5db;
+    transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ai-chat-suggestion:hover {
+    background: #4b5563;
+}
+
+html.light .ai-chat-suggestion {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+html.light .ai-chat-suggestion:hover {
+    background: #e5e7eb;
+}
+
+
+/* Message Bubbles */
+
+.ai-chat-bubble-assistant {
+    background: #374151;
+    color: #d1d5db;
+    transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html.light .ai-chat-bubble-assistant {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+
+/* Loading Indicator */
+
+.ai-chat-loading {
+    background: #374151;
+    transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html.light .ai-chat-loading {
+    background: #f3f4f6;
+}
+
+
+/* Input Form */
+
+.ai-chat-input-form {
+    background: #111827;
+    border-top: 1px solid #374151;
+    transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html.light .ai-chat-input-form {
+    background: #f9fafb;
+    border-top: 1px solid #d1d5db;
+}
+
+
+/* Input Field */
+
+.ai-chat-input {
+    background: #374151;
+    color: #ffffff;
+    border: 1px solid transparent;
+    transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ai-chat-input::placeholder {
+    color: #9ca3af;
+}
+
+html.light .ai-chat-input {
+    background: #ffffff;
+    color: #374151;
+    border: 1px solid #d1d5db;
+}
+
+html.light .ai-chat-input::placeholder {
+    color: #9ca3af;
 }

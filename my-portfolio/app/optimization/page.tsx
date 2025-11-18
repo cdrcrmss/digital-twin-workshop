@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, TrendingUp, Zap, Clock, Database, Activity } from 'lucide-react';
+import { PageWrapper } from '../components/PageWrapper';
 
 export default function OptimizationPage() {
   const [activeTab, setActiveTab] = useState('query');
@@ -65,8 +66,8 @@ export default function OptimizationPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-black light:bg-white text-white light:text-gray-900">
-      <div className="container mx-auto max-w-6xl px-6 py-12">
+    <PageWrapper>
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 py-8 sm:py-12">
         <Link href="/advanced-features" className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 mb-6">
           <ArrowLeft className="w-4 h-4" />
           Back to Advanced Features
@@ -303,6 +304,6 @@ export default function OptimizationPage() {
           </Link>
         </div>
       </div>
-    </div>
+    </PageWrapper>
   );
 }
