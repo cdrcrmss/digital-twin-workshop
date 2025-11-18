@@ -1,17 +1,23 @@
 ﻿@import "tailwindcss";
 @theme {
-    --color-primary: #00d9a3;
-    --color-primary-dark: #00b589;
-    --color-dark-bg: #0f1419;
-    --color-dark-surface: #1a1f26;
-    --color-dark-border: #2d3541;
+    /* Modern Blue-Purple Palette */
+    --color-primary: #6366f1;
+    --color-primary-light: #818cf8;
+    --color-secondary: #8b5cf6;
+    --color-accent: #ec4899;
+    --color-dark-bg: #0a0a0f;
+    --color-dark-surface: #16161f;
+    --color-dark-border: #27273a;
+    --color-light-bg: #ffffff;
+    --color-light-surface: #f8f9fa;
+    --color-light-border: #e2e8f0;
 }
 
 
-/* Text Gradient - Green Theme */
+/* Text Gradient - Dynamic Theme */
 
 .text-gradient {
-    background: linear-gradient(135deg, #00d9a3 0%, #00f5c4 100%);
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -24,7 +30,7 @@
     position: absolute;
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, rgba(0, 217, 163, 0.3) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, rgba(139, 92, 246, 0.2) 50%, transparent 70%);
     border-radius: 50%;
     filter: blur(60px);
     animation: float 6s ease-in-out infinite;
@@ -47,8 +53,8 @@
 /* Modern Card with Shadow */
 
 .modern-card {
-    background: #111111;
-    border: 1px solid #333333;
+    background: #16161f;
+    border: 1px solid #27273a;
     border-radius: 20px;
     padding: 40px;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -63,7 +69,7 @@
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, #00d9a3, #00f5c4);
+    background: linear-gradient(90deg, #6366f1, #8b5cf6, #ec4899);
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -74,16 +80,16 @@
 
 .modern-card:hover {
     transform: translateY(-8px);
-    border-color: rgba(0, 217, 163, 0.3);
-    box-shadow: 0 20px 60px rgba(0, 217, 163, 0.15);
+    border-color: rgba(99, 102, 241, 0.5);
+    box-shadow: 0 20px 60px rgba(99, 102, 241, 0.2);
 }
 
 
 /* Service Card */
 
 .service-card {
-    background: #111111;
-    border: 1px solid #333333;
+    background: #16161f;
+    border: 1px solid #27273a;
     border-radius: 16px;
     padding: 32px;
     transition: all 0.3s ease;
@@ -91,18 +97,18 @@
 }
 
 .service-card:hover {
-    background: rgba(0, 217, 163, 0.05);
-    border-color: #00d9a3;
+    background: rgba(99, 102, 241, 0.1);
+    border-color: #6366f1;
     transform: translateY(-4px);
 }
 
 .service-card.active {
-    background: #00d9a3;
-    border-color: #00d9a3;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    border-color: #6366f1;
 }
 
 .service-card.active * {
-    color: #000000 !important;
+    color: #ffffff !important;
 }
 
 
@@ -110,8 +116,8 @@
 
 .stats-badge {
     position: absolute;
-    background: #111111;
-    border: 2px solid #00d9a3;
+    background: #16161f;
+    border: 2px solid #6366f1;
     border-radius: 50%;
     width: 80px;
     height: 80px;
@@ -119,19 +125,19 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 10px 30px rgba(0, 217, 163, 0.3);
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
 }
 
 
-/* Primary Button - Green */
+/* Primary Button */
 
 .btn-primary {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     padding: 14px 32px;
-    background: #00d9a3;
-    color: #000000;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: #ffffff;
     font-weight: 600;
     border-radius: 8px;
     transition: all 0.3s ease;
@@ -139,9 +145,9 @@
 }
 
 .btn-primary:hover {
-    background: #00f5c4;
+    background: linear-gradient(135deg, #818cf8, #a78bfa);
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(0, 217, 163, 0.4);
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.5);
 }
 
 
@@ -153,15 +159,16 @@
     gap: 8px;
     padding: 14px 32px;
     background: transparent;
-    color: #00d9a3;
+    color: #6366f1;
     font-weight: 600;
-    border: 2px solid #00d9a3;
+    border: 2px solid #6366f1;
     border-radius: 8px;
     transition: all 0.3s ease;
 }
 
 .btn-outline:hover {
-    background: rgba(0, 217, 163, 0.1);
+    background: rgba(99, 102, 241, 0.1);
+    border-color: #8b5cf6;
     transform: translateY(-2px);
 }
 
@@ -170,18 +177,18 @@
 
 .skill-badge {
     padding: 10px 20px;
-    background: rgba(0, 217, 163, 0.1);
-    border: 1px solid rgba(0, 217, 163, 0.3);
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.3);
     border-radius: 8px;
-    color: #00d9a3;
+    color: #818cf8;
     font-size: 14px;
     font-weight: 500;
     transition: all 0.3s ease;
 }
 
 .skill-badge:hover {
-    background: rgba(0, 217, 163, 0.2);
-    border-color: #00d9a3;
+    background: rgba(99, 102, 241, 0.2);
+    border-color: #6366f1;
     transform: translateY(-2px);
 }
 
@@ -189,8 +196,8 @@
 /* Project Card */
 
 .project-card {
-    background: #111111;
-    border: 1px solid #333333;
+    background: #16161f;
+    border: 1px solid #27273a;
     border-radius: 16px;
     padding: 24px;
     transition: all 0.4s ease;
@@ -199,9 +206,9 @@
 }
 
 .project-card:hover {
-    border-color: #00d9a3;
+    border-color: #6366f1;
     transform: translateY(-4px);
-    box-shadow: 0 15px 40px rgba(0, 217, 163, 0.2);
+    box-shadow: 0 15px 40px rgba(99, 102, 241, 0.25);
 }
 
 
@@ -212,7 +219,7 @@
     display: block;
     width: 60px;
     height: 4px;
-    background: #00d9a3;
+    background: linear-gradient(90deg, #6366f1, #8b5cf6);
     margin-top: 12px;
     border-radius: 2px;
 }
@@ -222,40 +229,42 @@
 
 .geo-shape {
     position: absolute;
-    opacity: 0.1;
+    opacity: 0.15;
     pointer-events: none;
 }
 
 .geo-circle {
-    border: 2px solid #00d9a3;
+    border: 2px solid #6366f1;
     border-radius: 50%;
 }
 
 .geo-square {
-    border: 2px solid #00d9a3;
+    border: 2px solid #8b5cf6;
     transform: rotate(45deg);
 }
 
 @import "tailwindcss";
 
-/* Light Mode Overrides - Clean green highlights */
+/* ===============================================
+   LIGHT MODE - Complete Theme Override
+   =============================================== */
 
 .light .text-gradient {
-    background: linear-gradient(135deg, #00d9a3 0%, #00f5c4 100%);
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
 
-/* Light mode text - black for readability */
+/* Light Mode Cards */
 
 .light .modern-card,
 .light .service-card,
 .light .project-card {
-    background: white;
-    border-color: #e5e7eb;
-    color: #000000;
+    background: #ffffff;
+    border-color: #e2e8f0;
+    color: #1e293b;
 }
 
 .light .modern-card p,
@@ -264,75 +273,118 @@
 .light .modern-card div,
 .light .service-card div,
 .light .project-card div {
-    color: #000000;
+    color: #475569;
 }
 
-.light .stats-badge {
-    background: white;
-    border-color: #00d9a3;
-    box-shadow: 0 10px 30px rgba(0, 217, 163, 0.2);
-}
-
-.light .stats-badge .text-2xl {
-    color: #00d9a3 !important;
+.light .modern-card::before {
+    background: linear-gradient(90deg, #6366f1, #8b5cf6, #ec4899);
 }
 
 .light .modern-card:hover,
 .light .service-card:hover,
 .light .project-card:hover {
-    border-color: #00d9a3;
-    box-shadow: 0 20px 60px rgba(0, 217, 163, 0.15);
+    border-color: #6366f1;
+    box-shadow: 0 20px 60px rgba(99, 102, 241, 0.15);
 }
 
+
+/* Light Mode Stats Badge */
+
+.light .stats-badge {
+    background: #ffffff;
+    border-color: #6366f1;
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
+}
+
+.light .stats-badge .text-2xl {
+    color: #6366f1 !important;
+}
+
+
+/* Light Mode Skill Badges */
+
 .light .skill-badge {
-    background: rgba(0, 217, 163, 0.1);
-    border-color: rgba(0, 217, 163, 0.3);
-    color: #00b589;
+    background: rgba(99, 102, 241, 0.08);
+    border-color: rgba(99, 102, 241, 0.25);
+    color: #6366f1;
 }
 
 .light .skill-badge:hover {
-    background: rgba(0, 217, 163, 0.2);
-    border-color: #00d9a3;
+    background: rgba(99, 102, 241, 0.15);
+    border-color: #6366f1;
 }
 
+
+/* Light Mode Buttons */
+
 .light .btn-primary {
-    background: #00d9a3;
-    color: white;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: #ffffff;
 }
 
 .light .btn-primary:hover {
-    background: #00f5c4;
-    box-shadow: 0 10px 30px rgba(0, 217, 163, 0.4);
+    background: linear-gradient(135deg, #818cf8, #a78bfa);
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
 }
 
 .light .btn-outline {
-    color: #00d9a3;
-    border-color: #00d9a3;
+    color: #6366f1;
+    border-color: #6366f1;
 }
 
 .light .btn-outline:hover {
-    background: rgba(0, 217, 163, 0.05);
+    background: rgba(99, 102, 241, 0.08);
+    border-color: #8b5cf6;
+}
+
+
+/* Light Mode Service Cards */
+
+.light .service-card:hover {
+    background: rgba(99, 102, 241, 0.05);
+    border-color: #6366f1;
 }
 
 .light .service-card.active {
-    background: #00d9a3;
-    color: white;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: #ffffff;
 }
+
+.light .service-card.active * {
+    color: #ffffff !important;
+}
+
+
+/* Light Mode Hero Effects */
 
 .light .hero-blob {
-    background: radial-gradient(circle, rgba(0, 217, 163, 0.15) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, rgba(139, 92, 246, 0.08) 50%, transparent 70%);
 }
 
-.light .geo-circle,
-.light .geo-square {
-    border-color: #00d9a3;
+
+/* Light Mode Geometric Shapes */
+
+.light .geo-circle {
+    border-color: #6366f1;
     opacity: 0.2;
 }
 
-.light .project-card:hover {
-    border-color: #00d9a3;
+.light .geo-square {
+    border-color: #8b5cf6;
+    opacity: 0.2;
 }
 
+
+/* Light Mode Section Titles */
+
 .light .section-title::after {
-    background: #00d9a3;
+    background: linear-gradient(90deg, #6366f1, #8b5cf6);
+}
+
+
+/* Light Mode Project Cards */
+
+.light .project-card:hover {
+    border-color: #6366f1;
+    box-shadow: 0 15px 40px rgba(99, 102, 241, 0.2);
 }

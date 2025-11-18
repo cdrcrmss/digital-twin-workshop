@@ -63,16 +63,20 @@ export default function DemoPage() {
     setDemoResponse('');
 
     try {
-      const response = await fetch('http://localhost:3000/api/mcp', {
+      const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ question: query })
       });
 
+      if (!response.ok) {
+        throw new Error(`Server error: ${response.status}`);
+      }
+
       const data = await response.json();
       setDemoResponse(data.answer || 'No response received');
     } catch (error) {
-      setDemoResponse('Error: Unable to connect to Digital Twin MCP server. Make sure it\'s running on port 3000.');
+      setDemoResponse('Error: Unable to process your query. Please try again or check the AI chatbot in the bottom-right corner.');
     } finally {
       setLoading(false);
     }
