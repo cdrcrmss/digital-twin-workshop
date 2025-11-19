@@ -47,6 +47,7 @@ export default function Home() {
           </div>
           <div className="hidden lg:flex gap-8 text-sm font-medium dark:text-white light:text-gray-700">
             <a href="/projects" className="hover:text-[#6366f1] transition-colors duration-200">Projects</a>
+            <a href="/documentation" className="hover:text-[#6366f1] transition-colors duration-200">Documentation</a>
             <a href="/advanced-features" className="hover:text-[#6366f1] transition-colors duration-200">Advanced</a>
             <a href="/optimization" className="hover:text-[#6366f1] transition-colors duration-200">Optimization</a>
             <a href="/monitoring" className="hover:text-[#6366f1] transition-colors duration-200">Monitoring</a>

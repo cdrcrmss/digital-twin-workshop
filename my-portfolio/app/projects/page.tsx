@@ -307,24 +307,24 @@ export default function ProjectsPage() {
 
         {/* Project Detail Modal */}
         {selectedProject && (
-          <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-6">
-            <div className="card max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-              <div className="sticky top-0 card border-b border-zinc-800 light:border-zinc-300 p-6 flex justify-between items-start">
+          <div className="fixed inset-0 bg-black/80 dark:bg-black/80 light:bg-white/80 backdrop-blur-sm z-50 flex items-center justify-center p-6">
+            <div className="card max-w-4xl w-full max-h-[90vh] overflow-y-auto bg-zinc-900 dark:bg-zinc-900 light:bg-white border border-zinc-800 dark:border-zinc-800 light:border-gray-300 rounded-2xl">
+              <div className="sticky top-0 bg-zinc-900 dark:bg-zinc-900 light:bg-white border-b border-zinc-800 dark:border-zinc-800 light:border-gray-300 p-6 flex justify-between items-start">
                 <div>
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="p-4 bg-purple-900/30 border border-purple-800 rounded-xl">
-                      <selectedProject.IconComponent className="w-8 h-8 text-purple-400" />
+                    <div className="p-4 bg-purple-900/30 dark:bg-purple-900/30 light:bg-purple-100 border border-purple-800 dark:border-purple-800 light:border-purple-300 rounded-xl">
+                      <selectedProject.IconComponent className="w-8 h-8 text-purple-400 dark:text-purple-400 light:text-purple-600" />
                     </div>
                     <div>
-                      <div className="text-sm text-purple-400 font-semibold">Week {selectedProject.week}</div>
-                      <h2 className="text-3xl font-bold">{selectedProject.title}</h2>
+                      <div className="text-sm text-purple-400 dark:text-purple-400 light:text-purple-600 font-semibold">Week {selectedProject.week}</div>
+                      <h2 className="text-3xl font-bold text-white dark:text-white light:text-gray-900">{selectedProject.title}</h2>
                     </div>
                   </div>
-                  <p className="text-zinc-400 light:text-zinc-600">{selectedProject.subtitle}</p>
+                  <p className="text-zinc-400 dark:text-zinc-400 light:text-gray-600">{selectedProject.subtitle}</p>
                 </div>
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="text-zinc-500 hover:text-white light:hover:text-black text-2xl"
+                  className="text-zinc-500 hover:text-white dark:hover:text-white light:text-gray-500 light:hover:text-gray-900 text-2xl"
                 >
                   ×
                 </button>
@@ -333,25 +333,25 @@ export default function ProjectsPage() {
               <div className="p-6 space-y-6">
                 {/* Description */}
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">Overview</h3>
-                  <p className="text-zinc-400 light:text-zinc-600">{selectedProject.description}</p>
+                  <h3 className="text-xl font-semibold mb-2 text-white dark:text-white light:text-gray-900">Overview</h3>
+                  <p className="text-zinc-400 dark:text-zinc-400 light:text-gray-600">{selectedProject.description}</p>
                 </div>
 
                 {/* Challenge */}
-                <div className="bg-red-900/20 border border-red-800 rounded-lg p-4">
-                  <h3 className="text-lg font-semibold mb-2 text-red-400">Challenge</h3>
-                  <p className="text-zinc-300 light:text-zinc-700">{selectedProject.challenge}</p>
+                <div className="bg-red-900/20 dark:bg-red-900/20 light:bg-red-50 border border-red-800 dark:border-red-800 light:border-red-300 rounded-lg p-4">
+                  <h3 className="text-lg font-semibold mb-2 text-red-400 dark:text-red-400 light:text-red-600">Challenge</h3>
+                  <p className="text-zinc-300 dark:text-zinc-300 light:text-gray-700">{selectedProject.challenge}</p>
                 </div>
 
                 {/* Solution */}
-                <div className="bg-green-900/20 border border-green-800 rounded-lg p-4">
-                  <h3 className="text-lg font-semibold mb-2 text-green-400">Solution</h3>
-                  <p className="text-zinc-300 light:text-zinc-700">{selectedProject.solution}</p>
+                <div className="bg-green-900/20 dark:bg-green-900/20 light:bg-green-50 border border-green-800 dark:border-green-800 light:border-green-300 rounded-lg p-4">
+                  <h3 className="text-lg font-semibold mb-2 text-green-400 dark:text-green-400 light:text-green-600">Solution</h3>
+                  <p className="text-zinc-300 dark:text-zinc-300 light:text-gray-700">{selectedProject.solution}</p>
                 </div>
 
                 {/* Technologies */}
                 <div>
-                  <h3 className="text-xl font-semibold mb-3">Tech Stack</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-white dark:text-white light:text-gray-900">Tech Stack</h3>
                   <div className="flex flex-wrap gap-2">
                     {selectedProject.technologies.map((tech) => (
                       <span
@@ -366,11 +366,11 @@ export default function ProjectsPage() {
 
                 {/* Key Features */}
                 <div>
-                  <h3 className="text-xl font-semibold mb-3">Key Features</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-white dark:text-white light:text-gray-900">Key Features</h3>
                   <ul className="space-y-2">
                     {selectedProject.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-zinc-400 light:text-zinc-600">
-                        <span className="text-purple-400 mt-1">•</span>
+                      <li key={idx} className="flex items-start gap-2 text-zinc-400 dark:text-zinc-400 light:text-gray-600">
+                        <span className="text-purple-400 dark:text-purple-400 light:text-purple-600 mt-1">•</span>
                         {feature}
                       </li>
                     ))}
@@ -379,10 +379,10 @@ export default function ProjectsPage() {
 
                 {/* Results */}
                 <div>
-                  <h3 className="text-xl font-semibold mb-3">Results & Impact</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-white dark:text-white light:text-gray-900">Results & Impact</h3>
                   <ul className="space-y-2">
                     {selectedProject.results.map((result, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-green-400">
+                      <li key={idx} className="flex items-start gap-2 text-green-400 dark:text-green-400 light:text-green-600">
                         <span className="mt-1">✓</span>
                         {result}
                       </li>
