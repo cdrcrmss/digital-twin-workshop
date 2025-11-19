@@ -6,14 +6,13 @@ import { AIChat } from './AIChat';
 
 interface PageWrapperProps {
   children: ReactNode;
-  showAIChat?: boolean;
   className?: string;
 }
 
-export function PageWrapper({ children, showAIChat = false, className = '' }: PageWrapperProps) {
+export function PageWrapper({ children, className = '' }: PageWrapperProps) {
   return (
     <div className={`min-h-screen bg-black light:bg-white text-white light:text-gray-900 transition-colors duration-300 overflow-x-hidden ${className}`}>
-      {showAIChat && <AIChat />}
+      <AIChat />
       <Navigation />
       
       {/* Geometric Background Shapes */}

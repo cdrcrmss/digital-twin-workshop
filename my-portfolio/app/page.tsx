@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { AIChat } from './components/AIChat';
-import { ThemeToggle } from './components/ThemeToggle';
+import { Navigation } from './components/Navigation';
 import { CVViewer } from './components/CVViewer';
 import { Github, Linkedin, Facebook, Mail, ArrowRight, Code2, Sparkles, Briefcase } from 'lucide-react';
 
@@ -31,34 +31,14 @@ export default function Home() {
       {/* AI Chat Component */}
       <AIChat />
       
-      {/* Theme Toggle */}
-      <ThemeToggle />
+      {/* Navigation */}
+      <Navigation />
 
       {/* Geometric Background Shapes */}
       <div className="geo-shape geo-circle w-32 h-32 top-20 right-10 dark:opacity-30 light:opacity-5" />
       <div className="geo-shape geo-square w-24 h-24 bottom-40 left-10 dark:opacity-30 light:opacity-5" />
       <div className="geo-shape geo-circle w-40 h-40 top-1/2 right-1/4 dark:opacity-20 light:opacity-5" />
       
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-black/80 backdrop-blur-xl border-b border-gray-800/50 z-50 dark:bg-black/80 dark:border-gray-800/50 light:bg-white/95 light:border-gray-200">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="text-2xl font-bold">
-            <Link href="/" className="text-gradient hover:opacity-80 transition-opacity duration-200">CR</Link>
-          </div>
-          <div className="hidden lg:flex gap-8 text-sm font-medium dark:text-white light:text-gray-700">
-            <a href="/projects" className="hover:text-[#6366f1] transition-colors duration-200">Projects</a>
-            <a href="/documentation" className="hover:text-[#6366f1] transition-colors duration-200">Documentation</a>
-            <a href="/advanced-features" className="hover:text-[#6366f1] transition-colors duration-200">Advanced</a>
-            <a href="/optimization" className="hover:text-[#6366f1] transition-colors duration-200">Optimization</a>
-            <a href="/monitoring" className="hover:text-[#6366f1] transition-colors duration-200">Monitoring</a>
-            <a href="/mcp-integration" className="hover:text-[#6366f1] transition-colors duration-200">MCP</a>
-            <a href="/demo" className="hover:text-[#6366f1] transition-colors duration-200">Demo</a>
-            <a href="/professional" className="hover:text-[#6366f1] transition-colors duration-200">Branding</a>
-            <a href="#contact" className="hover:text-[#6366f1] transition-colors duration-200">Contact</a>
-          </div>
-        </div>
-      </nav>
-
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex items-center px-6 pt-20">
         {/* Animated Blob - Hidden in Light Mode */}
